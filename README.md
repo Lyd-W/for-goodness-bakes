@@ -10,7 +10,8 @@ A full‑stack Django web application where users can browse recipes and, once l
 * [User Goals](#user-goals)
 * [User Stories](#user-stories)
 * [User Feedback](#user-feedback)
-* [Website Goals and Objectives](#website-goals-and-objectives)
+* [Website Goals](#website-goals)
+* [Website Objectives](#website-objectives)
 * [Target Audience](#target-audience) 
 * [Wireframes](#wireframes)
 * [Design Choices](#design-choices)
@@ -73,6 +74,44 @@ A full‑stack Django web application where users can browse recipes and, once l
 * As an admin, I want to edit existing recipes so that I can correct errors or improve recipe content.
 * As an admin, I want to delete recipes so that outdated or incorrect content can be removed.
 * As an admin, I want to manage user comments so that inappropriate or spam content can be removed.
+
+[Back to contents](#contents)
+
+## User Feedback
+
+User feedback will go here.
+
+[Back to contents](#contents)
+
+## Website Goals
+
+The key website goals are to provide users with a safe community to browse recipe ideas and, when authenticated, engage with the community through posting, editing and deleting their own comments. Administrators will provide this safe community through their abilitiy to moderate user comments and add or amend recipe information. 
+
+[Back to contents](#contents)
+
+## Website Objectives
+
+* To provide clearly structured and visually appealing recipe content for public users, authenticated users and admin, ensuring information is easy to find, read and navigate across different devices.
+* To provide intuitive navigation onto individual recipe pages from the recipe listing page, keeping the layout consistent with clear information and easily accessible navigation controls.
+* Enable secure registration for new users, with clear UI confirmation.
+* Enable secure log in/out for existing users, with clear UI confirmation.
+* Ability for only authenticated users to comment on recipes, including editing and deleting thier own comments successfully, with prior prompting before deletion and activity confirmation.
+* All sensitive user and site data is suitably protected, following best practiuce for secure data handling.
+* Allow users with administrative access to manage recipe content and moderate user comments to ensure accuracy, relevance and appropriate for the target audience.
+* Ensure all data input is validated and users are clearly notified of errors in data input. 
+* Inclusion of an error page to direct users back to the homepage if a broken link or error occurs.
+
+[Back to contents](#contents)
+
+## Target Audience
+
+* Home bakers
+* Food enthusiasts
+* Users who want to discuss and improve recipes
+* Beginner to intermediate bakers seeking advice
+* Beginner to intermediate bakers wanting to share advice
+* Users wanting to be part of a baking community
+* Families
 
 [Back to contents](#contents)
 
