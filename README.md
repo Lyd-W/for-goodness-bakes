@@ -115,3 +115,47 @@ The key website goals are to provide users with a safe community to browse recip
 
 [Back to contents](#contents)
 
+## Wireframes
+
+The wireframes were designed using templates from [Balsamiq](https://balsamiq.com/ "Balsamiq Homepage"). A mobile first approach was taken throughout.
+
+[Mobile Wireframes](docs/mobile-wireframes.pdf "Mobile Wireframes")
+
+[Tablet Wireframes](docs/tablet-wireframes.pdf "Tablet Wireframes")
+
+[Desktop Wireframes](docs/desktop-wireframes.pdf "Laptop Wireframes")
+
+[Back to contents](#contents)
+
+## Design Choices
+
+### Typography
+
+The primary font family that was chosen for For Goodness Bakes was [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=playfair+display "Google Fonts | Playfair Display"), the soft curves of the serif style offers a warm and personal feeling to welcome users into the website. Playfair Display offers a familiar magazine feeling, helping users to feel comfortable and invited to interact with the recipes and other users. This font was used for recipe titles and headings.
+
+The secondary font family that was chosen for For Goodness Bakes was [Lato](https://fonts.google.com/specimen/Lato "Google Fonts | Lato") due to its readability through its clean letter design and professional yet friendly appearance while remaining neutral enough to not compete with the headings. Lato offers legibility for longer bodies of text making it ideal for recipe descriptions, ingredient lists, instructions and comments.
+
+Together, these font groups help to create visual balance, offering warmth and an easy reading experience. The use of a serif font for headings and a sans-serif font for body text also provides easy visual distinction for users.
+
+### Colour Scheme
+
+To visualise different colours together [Coolors Scheme](https://coolors.co/ "Coolors Scheme Homepage") was used to create a fitting combination for the website. Graphite was chosen for the font colour for the feeling of professionalism and ease of legibility whilst being easier on the eyes which was ideal for body text, headings and icons. Parchment was used to create a calmer, welcoming approach. This creates the feeling of reading from paper, suggesting cookbook pages, giving a better UX, therefore this colour was ideal for the website background. Soft Blossom was used to bring in a comforting, feminine touch whilst not being too overpowering, and was used for buttons, links and navigation. To reinforce the calm atmosphere the website aimed for, Ash Grey was selected, this helped to bring a natural, healthier balance to the Soft Blossom because greens are often associated with food and wellness. The final colour used was Burnt Peach, being a similar colour to spices it felt a natural choice for a baking website, bringing a sharp enphasis among the other colours making it ideal for buttons such as submitting,  commenting or hovers and borders.
+
+![Coolors Scheme](docs/coolors.png)
+
+[Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FAF7F2%0D%0A%23E8B7C8%0D%0A%23C97A5D%0D%0A%23A8C3B1%0D%0A%232B2B2B&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid") was used to determine the best colour combinations to ensure the website was visually appealing whilst remaining easy for the user to read the content.
+
+![Contrast Grid](docs/contrast-grid.png)
+
+|CSS Name               |HEX          |Use
+|-----------------------|-------------|------------------------------------------------|
+| --primary | #FAF7F2 | Website background colour |
+| --secondary | #E8B7C8 | Buttons, links, navigation  |
+| --primary-highlight | #C97A5D | Button hover and borders, submission button |
+| --secondary-highlight | #A8C3B1 | Secondary buttons, success messages |
+| --text | #2B2B2B | Primary text colour |
+
+### Images
+
+Image information here.
+
