@@ -157,5 +157,131 @@ To visualise different colours together [Coolors Scheme](https://coolors.co/ "Co
 
 ### Images
 
-Image information here.
+Image information to be added here.
+
+### Responsiveness
+
+Responsivness information to be added here.
+
+[Back to contents](#contents)
+
+# Features
+
+Features information to be added here.
+
+## Existing Features
+
+### Header
+
+Header information to be added here.
+
+<b>Mobile header</b>
+
+<b>Tablet header</b>
+
+<b>Desktop header</b>
+
+### Home Section
+
+Home section information to be added here.
+
+<br>
+
+### Registration
+
+Registration information to be added here.
+
+<br>
+
+### Login Section
+
+Login section information to be added here.
+
+<br>
+
+### About Section
+
+About section information to be added here.
+
+<br>
+
+### Success Page
+
+Success page information to be added here.
+
+<br>
+
+### 404 Error Page
+
+Error page information to be added here.
+
+<br>
+
+### Footer
+
+Footer information to be added here.
+
+## Future Enhancements
+
+[Back to contents](#contents)
+
+# Technologies Used
+
+## Languages
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML "HTML")
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS "CSS")
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JavaScript")
+- [Python](https://www.python.org/ "Python")
+
+## Libraries and Frameworks
+
+- [Bootstrap v5.3](https://getbootstrap.com/ "Bootstrap v5.3 Homepage")
+- [Favicon](https://favicon.io/ "Favicon Homepage")
+- [Font Awesome](https://fontawesome.com/search?q=menu&o=r&ic=free "Font Awesome Homepage")
+- [Google Fonts](https://fonts.google.com/ "Google Fonts Homepage")
+
+## Tools and Programmes
+
+- [Balsamiq](https://balsamiq.com/ "Balsamiq Homepage")
+- [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FAF7F2%0D%0A%23E8B7C8%0D%0A%23C97A5D%0D%0A%23A8C3B1%0D%0A%232B2B2B&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid")
+- [Coolors](http://https://coolors.co/ "Coolors")
+- [GitHub](https://github.com "GitHub Homepage")
+- [Heroku](https://www.heroku.com/ "Heroku")
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode "Prettier - Code Formatter")
+- [VS Code](https://code.visualstudio.com/ "VS Code Homepage")
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation Service Homepage")
+- [W3C HTML Validation Service](https://validator.w3.org/#validate_by_uri "W3C HTML Validation Service Homepage")
+
+[Back to contents](#contents)
+
+# Testing
+
+## Bugs
+
+|   Bug Description                         | Resolved |    Resolution Description                               |
+|-------------------------------------------|----------|---------------------------------------------------------|
+
+
+## Responsiveness Tests
+
+Responsiveness tests information to be added here.
+
+## Code Validation
+
+### HTML
+
+HTML information to be added here.
+
+### CSS
+
+CSS information to be added here.
+
+### JavaScript
+
+JavaScript information to be added here.
+
+### Python
+
+Python information to be added here.
 
