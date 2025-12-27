@@ -51,13 +51,18 @@ A full‑stack Django web application where users can browse recipes and, once l
 
 ## User Goals
 
+### Public Users:
 * Display all recipes for public users, authenticated users and admin.
 * Each recipe has an individual detail page for public users, authenticated users and admin to view.
 * Public users can read comments on recipes.
 * Public users can register for an account.
+
+### Authenticated Users:
 * Authenticated users can log in and out.
 * Authenticated users can create comments on recipes with immediate UI feedback.
 * Authenticated users can edit and delete their own comments with immediate UI feedback.
+
+### Admin:
 * Admin can create, edit and delete recipes.
 * Admin can moderate comments.
 
@@ -65,11 +70,16 @@ A full‑stack Django web application where users can browse recipes and, once l
 
 ## User Stories
 
+### Public Users:
 * As a public user, I want to browse a list of recipes and view individual recipe details so that I can find recipes to bake without needing to register.
 * As a new user, I want to create an account and log in securely so that I can participate in commenting on recipes.
+
+### Authenticated Users:
 * As an authenticated user, I want to add comments to recipes so that I can share feedback, baking tips and interact with other users.
 * As an authenticated user, I want to edit my own comment so that I can correct mistakes or update my advice.
 * As an authenticated user, I want to delete my own comment so that I can remove content I no longer want displayed.
+
+### Admin:
 * As an admin, I want to create new recipes so that fresh content can be added to the site for users to explore.
 * As an admin, I want to edit existing recipes so that I can correct errors or improve recipe content.
 * As an admin, I want to delete recipes so that outdated or incorrect content can be removed.
