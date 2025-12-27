@@ -1,6 +1,6 @@
 # For Goodness Bakes
 
-[For Goodness Bakes](https://lyd-w.github.io/for-goodness-bakes/ "For Goodness Bakes | Github")
+[For Goodness Bakes]( "For Goodness Bakes | Heroku")
 
 A full‑stack Django web application where users can browse recipes and, once logged in, create, edit, and delete comments on recipes. For Goodness Bakes is a relaxed and friendly community for bakers of all levels to come together for interaction and support from similar minded individuals. The platform focuses on clean UX, accessibility, secure authentication, and robust CRUD functionality.
 
@@ -74,6 +74,10 @@ A full‑stack Django web application where users can browse recipes and, once l
 * As an admin, I want to edit existing recipes so that I can correct errors or improve recipe content.
 * As an admin, I want to delete recipes so that outdated or incorrect content can be removed.
 * As an admin, I want to manage user comments so that inappropriate or spam content can be removed.
+
+These user stories have been prioritied using the MoSCoW Prioritisation method. GitHub Project Board was then used to manage workflow and track progress towards completion of each story and ensuring all required elements of the user stories were met.
+
+![GitHub Project Board](docs/github-project-board.png)
 
 [Back to contents](#contents)
 
@@ -229,14 +233,16 @@ Footer information to be added here.
 
 ## Languages
 
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML "HTML")
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS "CSS")
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML "HTML")
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JavaScript")
+- [Markdown](https://en.wikipedia.org/wiki/Markdown "Markdown")
 - [Python](https://www.python.org/ "Python")
 
 ## Libraries and Frameworks
 
 - [Bootstrap v5.3](https://getbootstrap.com/ "Bootstrap v5.3 Homepage")
+- [Django](https://www.djangoproject.com/ "Django Homepage")
 - [Favicon](https://favicon.io/ "Favicon Homepage")
 - [Font Awesome](https://fontawesome.com/search?q=menu&o=r&ic=free "Font Awesome Homepage")
 - [Google Fonts](https://fonts.google.com/ "Google Fonts Homepage")
@@ -285,3 +291,67 @@ JavaScript information to be added here.
 
 Python information to be added here.
 
+## User Story Testing
+
+|User Story                               | Result                                      |Pass| Evidence             |
+|-----------------------------------------|---------------------------------------------|----|----------------------|
+| As a public user, I want to browse a list of recipes and view individual recipe details so that I can find recipes to bake without needing to register. | Result | Pass | Evidence |
+| As a new user, I want to create an account and log in securely so that I can participate in commenting on recipes. | Result | Pass | Evidence |
+| As an authenticated user, I want to add comments to recipes so that I can share feedback, baking tips and interact with other users. | Result | Pass | Evidence |
+| As an authenticated user, I want to edit my own comment so that I can correct mistakes or update my advice. | Result | Pass | Evidence |
+| As an authenticated user, I want to delete my own comment so that I can remove content I no longer want displayed. | Result | Pass | Evidence | 
+| As an admin, I want to create new recipes so that fresh content can be added to the site for users to explore. | Result | Pass | Evidence |
+| As an admin, I want to edit existing recipes so that I can correct errors or improve recipe content. | Result | Pass | Evidence |
+| As an admin, I want to delete recipes so that outdated or incorrect content can be removed. | Result | Pass | Evidence |
+| As an admin, I want to manage user comments so that inappropriate or spam content can be removed. | Result | Pass | Evidence |
+
+[Back to contents](#contents)
+
+## Feature Testing
+
+Feature testing information to be added here.
+
+## Accessibility Testing
+
+Accessibility testing information to be added here.
+
+## Lighthouse Testing
+
+Lighthouse testing information to be added here.
+
+## Browser Testing
+
+Browser testing information to be added here.
+
+[Back to contents](#contents)
+
+# Deployment
+
+Deployment information to be added here.
+
+[Back to contents](#contents)
+
+# Credits
+
+#### Feedback, advice and support
+
+- 
+
+#### Learning Resources and Guidance
+
+- [Code Institute](https://codeinstitute.net/ "Code Institute")
+- [MDN](https://developer.mozilla.org/en-US/ "MDN | Homepage")
+- [Slack](https://slack.com/intl/en-gb/ "Slack")
+- [Stack Overflow](https://stackoverflow.com/ "Stack Overflow")
+- [W3 Schools](https://www.w3schools.com/ "W3 Schools")
+
+#### Images:
+
+- [Favicon.io](https://favicon.io "Favicon.io")
+
+#### Visual Content:
+
+- [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FAF7F2%0D%0A%23E8B7C8%0D%0A%23C97A5D%0D%0A%23A8C3B1%0D%0A%232B2B2B&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid")
+- [Coolors Scheme](https://coolors.co/ "Coolors Scheme Homepage")
+
+[Back to contents](#contents)
