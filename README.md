@@ -132,13 +132,13 @@ The key website goals are to provide users with a safe community to browse recip
 
 ## Wireframes
 
-The wireframes were designed using templates from [Balsamiq](https://balsamiq.com/ "Balsamiq Homepage"). A mobile first approach was taken throughout.
+Wireframes were created using [Draw.io](https://www.drawio.com/ "Draw.io Homepage"). A mobile first approach was taken throughout, the wireframes provided a visual respresentation of the expected layout and structure of the website. Within the wireframes, key element placement is visible for navigation, content and interactive areas.  
 
-[Mobile Wireframes](docs/mobile-wireframes.pdf "Mobile Wireframes")
+[Mobile Wireframes](docs/mobile-wireframes.png "Mobile Wireframes")
 
-[Tablet Wireframes](docs/tablet-wireframes.pdf "Tablet Wireframes")
+[Tablet Wireframes](docs/tablet-wireframes.png "Tablet Wireframes")
 
-[Desktop Wireframes](docs/desktop-wireframes.pdf "Laptop Wireframes")
+[Desktop Wireframes](docs/desktop-wireframes.png "Laptop Wireframes")
 
 [Back to contents](#contents)
 
@@ -260,9 +260,9 @@ Footer information to be added here.
 
 ## Tools and Programmes
 
-- [Balsamiq](https://balsamiq.com/ "Balsamiq Homepage")
 - [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FAF7F2%0D%0A%23E8B7C8%0D%0A%23C97A5D%0D%0A%23A8C3B1%0D%0A%232B2B2B&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid")
 - [Coolors](http://https://coolors.co/ "Coolors")
+- [Draw.io](https://www.drawio.com/ "Draw.io Homepage")
 - [GitHub](https://github.com "GitHub Homepage")
 - [Heroku](https://www.heroku.com/ "Heroku")
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode "Prettier - Code Formatter")
