@@ -19,6 +19,11 @@ A full stack Django web application where users can browse recipes and, once log
     + [Colour Scheme](#colour-scheme)
     + [Images](#images)
     + [Responsiveness](#responsiveness)
+* [Security Measures and Protective Design](#security-measures-and-protective-design)
+    + [User Authentication](#user-authentication)
+    + [Password Management](#password-management)
+    + [Form Validation](#form-validation)
+    + [Database Security](#database-security)
 * [Features](#features)
     * [Existing Features](#existing-features)
         + [Header](#header)
@@ -180,6 +185,30 @@ Responsivness information to be added here.
 
 [Back to contents](#contents)
 
+# Security Measures and Protective Design
+
+### User Authentication
+
+
+
+### Password Management
+
+
+
+### Form Validation
+
+
+
+### Database Security
+
+In order to protect sensitive configuration values, such as the Django `SECRET_KEY` and database credentials, environment variables are used. These values are stored securely using Heroku Config Vars and are never committed to the repository, with configuration files such as `env.py` excluded via `.gitignore`.
+
+Additional security measures are implemented by ensuring `DEBUG` mode is disabled in production, restricting access using `ALLOWED_HOSTS`, and protecting against cross-site request forgery through trusted origins defined in `CSRF_TRUSTED_ORIGINS`.
+
+The production database is not publicly accessible and can only be accessed through the Django application, ensuring users can only interact with data via the website’s features.
+
+[Back to contents](#contents)
+    
 # Features
 
 Features information to be added here.
