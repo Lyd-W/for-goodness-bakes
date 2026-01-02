@@ -12,11 +12,6 @@ DIFFICULTY_LEVELS = (
     (3, "Hard"),
 )
 
-APPROVAL = (
-    (0, "Unapproved"),
-    (1, "Approved"),
-)
-
 # Create your models here.
 class Recipe(models.Model):
     title = models.CharField(max_length=150, unique=True)
@@ -54,7 +49,7 @@ class Comment(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
-    approved = models.IntegerField(choices=APPROVAL, default=0)
+    approved = models.BooleanField(default=False)
     
     def display_recipe_title(self):
         return self.comment_on.title
