@@ -32,8 +32,13 @@ class Recipe(models.Model):
     difficulty = models.PositiveIntegerField(choices=DIFFICULTY_LEVELS)
     status = models.IntegerField(choices=STATUS, default=0)
     
-    def __str__(self):
-        return self.title
+class Meta:
+    ordering = ["-created-on"]
+            
+def __str__(self):
+    return self.title
+    
+    
     
 class Comment(models.Model):
     author = models.ForeignKey(
@@ -51,5 +56,8 @@ class Comment(models.Model):
     edited_on = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
     
-    def display_recipe_title(self):
-        return self.comment_on.title
+class Meta:
+    ordering = ["-created-on"] 
+    
+def __str__(self):
+    return f"Comment on {self.comment_on} by {self.author}"
