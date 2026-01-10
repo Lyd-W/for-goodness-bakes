@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 STATUS = (
     (0, "Draft"), 
@@ -12,11 +13,11 @@ DIFFICULTY_LEVELS = (
     (3, "Hard"),
 )
 
-# Create your models here.
+
 class Recipe(models.Model):
     title = models.CharField(max_length=150, unique=True)
     slug = models.SlugField(max_length=150, unique=True)
-    image = models.ImageField()
+    image = CloudinaryField('image')
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -32,11 +33,11 @@ class Recipe(models.Model):
     difficulty = models.PositiveIntegerField(choices=DIFFICULTY_LEVELS)
     status = models.IntegerField(choices=STATUS, default=0)
     
-class Meta:
-    ordering = ["-created-on"]
+    class Meta:
+        ordering = ["-created_on"]
             
-def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.title
     
     
     
@@ -56,8 +57,8 @@ class Comment(models.Model):
     edited_on = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
     
-class Meta:
-    ordering = ["-created-on"] 
+    class Meta:
+        ordering = ["-created_on"] 
     
-def __str__(self):
-    return f"Comment on {self.comment_on} by {self.author}"
+    def __str__(self):
+        return f"Comment on {self.comment_on} by {self.author}"
