@@ -5,4 +5,6 @@ from .models import Recipe
 # Create your views here.
 
 class RecipeList(generic.ListView):
-    model = Recipe
+    queryset = Recipe.objects.all()
+    template_name = "recipes/index.html"
+    paginate_by = 8

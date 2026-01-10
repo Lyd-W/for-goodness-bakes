@@ -1,0 +1,58 @@
+:root {
+  --primary-color: #FAF7F2; /* parchment */
+  --secondary-color: #E8B7C8; /* soft blossom */
+  --primary-highlight: #C97A5D; /* burnt peach */
+  --secondary-highlight: #A8C3B1; /* ash grey */
+  --text: #2B2B2B; /* graphite */
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: Lato, sans-serif;
+    color: var(--text);
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+.background {
+    background-color: #FAF7F2;
+}
+
+/* Nav bar */
+
+.navbar {
+    background-color: var(--primary-color);
+}
+
+.navbar-brand h1 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.navbar-text {
+    padding: 0;
+    font-size: 0.85rem;
+}
+
+/* Footer */
+
+.footer {
+    background-color: #2B2B2B;
+    color: var(--primary-color);
+}
+
+.footer p {
+    font-size: 0.9rem;
+}
+
+.footer i {
+    cursor: pointer;
+    color: var(--primary-color);
+    margin-left: 0.75rem;
+}
+
+.footer i:hover {
+    color: var(--primary-highlight);
+}
