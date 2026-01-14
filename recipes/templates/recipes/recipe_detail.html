@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="recipe-detail">
+
+  <header class="recipe-header">
+    <h2>{{ recipe.title }}</h2>
+    <p class="recipe-meta">
+      {{ recipe.author }} | {{ recipe.created_on|date:"F j, Y" }}
+    </p>
+  </header>
+
+  <div class="recipe-image">
+    <img src="{% static 'images/baking.jpg' %}" alt="Baking placeholder image">
+  </div>
+
+  <section class="recipe-section">
+    <h3>Cook Time</h3>
+    <p>{{ recipe.cook_time }} minutes</p>
+  </section>
+
+  <section class="recipe-section">
+    <h3>Prep Time</h3>
+    <p>{{ recipe.prep_time }} minutes</p>
+  </section>
+
+  <section class="recipe-section">
+    <h3>Ingredients</h3>
+    {{ recipe.ingredients|safe }}
+  </section>
+
+  <section class="recipe-section">
+    <h3>Method</h3>
+    {{ recipe.method|safe }}
+  </section>
+
+</section>
+
+{% endblock content %}

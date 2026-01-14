@@ -22,7 +22,7 @@
                         {% endif %}
                             <div class="card-body">
                                 <h2 class="card-title">
-                                    <a href="#" class="recipe-link">{{ recipe.title }}</a>
+                                    <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">{{ recipe.title }}</a>
                                 </h2>
                                 <p class="author">Author: {{recipe.author }}</p>
                             <hr/>
