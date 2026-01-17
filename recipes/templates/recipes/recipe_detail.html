@@ -48,7 +48,8 @@
       <h4>Comments:</h4>
         {% for comment in comments %}
           {% if not comment.approved and comment.author == user %}
-          faded{% elif not comment.approved %} d-none{% endif %}
+          {% elif not comment.approved %}
+          {% endif %}
             {{ comment.author }}
               {{ comment.created_on }}
           <div id="comment{{ comment.id }}">
@@ -59,7 +60,6 @@
             This comment is awaiting approval
           </p>
           {% endif %}
-        </div>
         {% endfor %}
            
 

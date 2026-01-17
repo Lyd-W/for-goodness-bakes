@@ -14,7 +14,7 @@ class RecipeList(generic.ListView):
 def recipe_detail(request, slug):
     queryset = Recipe.objects.filter(status=1)
     recipe = get_object_or_404(queryset, slug=slug)
-    comments = recipe.comments.filter(approved=True).order_by("-created_on")
+    comments = recipe.comments.all().order_by("-created_on")
     comment_count = recipe.comments.filter(approved=True).count()
     
     if request.method == "POST":
