@@ -47,20 +47,24 @@
 
       <h4>Comments:</h4>
         {% for comment in comments %}
-          {% if not comment.approved and comment.author == user %}
-          {% elif not comment.approved %}
-          {% endif %}
+            {% if not comment.approved and comment.author == user %}
+            {% elif not comment.approved %}
+            {% endif %}
             {{ comment.author }}
               {{ comment.created_on }}
-          <div id="comment{{ comment.id }}">
+            <div id="comment{{ comment.id }}">
             {{ comment.content | linebreaks }}
-          </div>
-          {% if not comment.approved and comment.author == user %}
-          <p class="approval">
-            This comment is awaiting approval
-          </p>
-          {% endif %}
+            </div>
+            {% if not comment.approved and comment.author == user %}
+            <p class="approval">
+                This comment is awaiting approval
+            </p>
+            {% endif %}
+            {% if user.is_authenticated and comment.author == user %}
+                <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit your comment</button>
+            {% endif %}
         {% endfor %}
+
            
 
         {% if user.is_authenticated %}
@@ -80,3 +84,7 @@
 
 
 {% endblock content %}
+
+{% block extras %}
+<script src="{% static 'js/comments.js' %}"></script>
+{% endblock %}
