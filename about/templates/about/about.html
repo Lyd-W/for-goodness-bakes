@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -20,5 +21,18 @@
     <h3>About</h3>
     <p>{{ about.content | safe }}</p>
   </section>
+
+
+<h2>Get in touch</h2>
+
+<p> Got a craving you wish to satisfy or a favourite recipe to share? 
+    <br>Contact us using the form below.</p>
+
+      <form method="post">
+        {{ contact_form | crispy }}
+        {% csrf_token %}
+        <button type="submit">Send message </button>
+      </form>
+
 
  {% endblock content %}
