@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <section class="recipe-detail">
@@ -36,5 +37,46 @@
   </section>
 
 </section>
+
+  <!-- Displaying count of comments -->
+<div>
+     Comments: {{ comment_count }}
+</div>
+
+  <!-- Displaying Comments -->
+
+      <h4>Comments:</h4>
+        {% for comment in comments %}
+          {% if not comment.approved and comment.author == user %}
+          faded{% elif not comment.approved %} d-none{% endif %}
+            {{ comment.author }}
+              {{ comment.created_on }}
+          <div id="comment{{ comment.id }}">
+            {{ comment.content | linebreaks }}
+          </div>
+          {% if not comment.approved and comment.author == user %}
+          <p class="approval">
+            This comment is awaiting approval
+          </p>
+          {% endif %}
+        </div>
+        {% endfor %}
+           
+
+        {% if user.is_authenticated %}
+        <h3>Leave a comment:</h3>
+        <p>Posting as: {{ user.username }}</p>
+        <form id="commentForm" method="post"
+          style="margin-top: 1.3em;">
+          {{ comment_form | crispy }}
+          {% csrf_token %}
+          <button id="submitButton" type="submit">
+            Submit comment
+          </button>
+        </form>
+        {% else %}
+        <p>Log in to leave a comment</p>
+        {% endif %}
+
 
 {% endblock content %}
