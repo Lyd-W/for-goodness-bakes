@@ -5,28 +5,46 @@
 
 <section class="recipe-detail">
 
+    <div class="recipe-image-container">
+        {% if recipe.image %}
+            <img src="{{ recipe.image.url }}"
+                class="recipe-image"
+                alt="{{ recipe.title }}">
+            {% else %}
+                <img src="{% static 'images/baking.jpg' %}"
+                    class="recipe-image"
+                    alt="Recipe placeholder">
+        {% endif %}
+
   <header class="recipe-header">
-    <h2>{{ recipe.title }}</h2>
-    <p class="recipe-meta">
-      {{ recipe.author }} | {{ recipe.created_on|date:"F j, Y" }}
-    </p>
+    <h2 class="recipe-title">{{ recipe.title }}</h2>
+    <div class="recipe-description">{{recipe.description| safe}}</div>
+    <div class="recipe-meta">{{ recipe.author }} | {{ recipe.created_on|date:"F j, Y" }} </div>
   </header>
 
-  <div class="recipe-image">
-    <img src="{% static 'images/baking.jpg' %}" alt="Baking placeholder image">
-  </div>
+  <section class="information-section">
+    <div class="servings">
+        <h3>Servings:</h3>
+        <p>{{ recipe.servings }}</p>
+    </div>
 
-  <section class="recipe-section">
-    <h3>Cook Time</h3>
-    <p>{{ recipe.cook_time }} minutes</p>
+    <div class="difficulty">
+        <h3>Difficulty</h3>
+        <p>{{ recipe.difficulty }}/5</p>
+    </div>
+
+    <div class="cook-time">
+        <h3>Cook Time</h3>
+        <p>{{ recipe.cook_time }} minutes</p>
+    </div>
+
+    <div class="prep-time">
+        <h3>Prep Time</h3>
+        <p>{{ recipe.prep_time }} minutes</p>
+    </div>
   </section>
 
-  <section class="recipe-section">
-    <h3>Prep Time</h3>
-    <p>{{ recipe.prep_time }} minutes</p>
-  </section>
-
-  <section class="recipe-section">
+  <section class="ingredients-section">
     <h3>Ingredients</h3>
     {{ recipe.ingredients|safe }}
   </section>
@@ -38,13 +56,13 @@
 
 </section>
 
-  <!-- Displaying count of comments -->
-<div>
-     Comments: {{ comment_count }}
-</div>
+<section class="comment-section">
 
-  <!-- Displaying Comments -->
+    <div class="comment-count">
+        Comments: {{ comment_count }}
+    </div>
 
+    <div class="comment-display">
       <h4>Comments:</h4>
         {% for comment in comments %}
             {% if not comment.approved and comment.author == user %}
@@ -65,29 +83,32 @@
                 <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit your comment</button>
             {% endif %}
         {% endfor %}
-
-<div class="modal" id="deleteModal" tabindex="-1"
-  aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"
-          id="deleteModalLabel">Delete your comment?</h5>
-        <button
-          data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to remove this comment? 
-        You can't have your cake and eat it too. 
-      </div>
-      <div class="modal-footer">
-        <button
-          data-bs-dismiss="modal">Close</button>
-        <a id="deleteConfirm" href="#">Delete</a>
-      </div>
     </div>
-  </div>
-</div>
+
+
+    <div class="modal" id="deleteModal" tabindex="-1"
+        aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"
+                        id="deleteModalLabel">Delete your comment?</h5>
+                            <button
+                                data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        Are you sure you want to remove this comment? 
+                        You can't have your cake and eat it too. 
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                        data-bs-dismiss="modal">Close</button>
+                        <a id="deleteConfirm" href="#">Delete</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
            
 
         {% if user.is_authenticated %}
@@ -97,13 +118,14 @@
           style="margin-top: 1.3em;">
           {{ comment_form | crispy }}
           {% csrf_token %}
-          <button id="submitButton" type="submit">
+          <button class="submit-button" id="submitButton" type="submit">
             Submit comment
           </button>
         </form>
         {% else %}
         <p>Log in to leave a comment</p>
         {% endif %}
+</section>
 
 
 {% endblock content %}

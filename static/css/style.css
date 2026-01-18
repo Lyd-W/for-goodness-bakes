@@ -16,6 +16,15 @@ h1, h2 {
     font-family: 'Playfair Display', serif;
 }
 
+h3 {
+    font-size: calc(0.9rem + 0.6vw);
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
 /* Nav bar */
 .navbar {
     background-color: #2B2B2B;
@@ -105,7 +114,60 @@ h1, h2 {
     color: inherit;
 }
 
+/*Recipe Detailed View*/
 
+.recipe-image-container {
+    padding-top: 1rem;
+}
+
+.recipe-image {
+    border: 2px solid var(--primary-highlight);
+    border-radius: 15px;
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.recipe-header {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.recipe-detail,
+.comment-section{
+    padding: 0 1rem 0 1rem;
+}
+
+.information-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+
+.cook-time,
+.prep-time,
+.difficulty,
+.servings {
+    border: 2px solid var(--primary-highlight);
+    border-radius: 15px;
+    margin-bottom: 0.75rem;
+    height: auto;
+    width: 125px;
+    text-align: center;
+}
+
+.ingredients-section {
+    margin-bottom: 2rem;
+}
+
+.comment-section {
+    margin-top: 2rem;
+}
+
+.submit-button {
+    margin:0.5rem;
+}
 
 /* Footer */
 
