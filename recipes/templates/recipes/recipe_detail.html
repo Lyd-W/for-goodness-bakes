@@ -79,8 +79,8 @@
             </p>
             {% endif %}
             {% if user.is_authenticated and comment.author == user %}  
-                <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
-                <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit your comment</button>
+                <button class="button btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                <button class="button btn-edit" comment_id="{{ comment.id }}">Edit your comment</button>
             {% endif %}
         {% endfor %}
     </div>
@@ -101,7 +101,7 @@
                         You can't have your cake and eat it too. 
                     </div>
                     <div class="modal-footer">
-                        <button
+                        <button class="button"
                         data-bs-dismiss="modal">Close</button>
                         <a id="deleteConfirm" href="#">Delete</a>
                     </div>
@@ -118,7 +118,7 @@
           style="margin-top: 1.3em;">
           {{ comment_form | crispy }}
           {% csrf_token %}
-          <button class="submit-button" id="submitButton" type="submit">
+          <button class="button submit-button" id="submitButton" type="submit">
             Submit comment
           </button>
         </form>
