@@ -50,6 +50,13 @@
         </button>
 
         <div class="collapse navbar-collapse ms-auto" id="navbarText">
+             <div class="navbar-text w-100 text-center mt-2">
+                {% if user.is_authenticated %}
+                    <p class="login navbar-text">Hi {{ user }}!</p>
+                {% else %}
+                    <div class="login navbar-text">Log in to get baking!</div>
+                {% endif %}
+             </div>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == home_url %}active{% endif %}"
@@ -88,11 +95,6 @@
                         Login
                     </a>
                 </li>
-                {% endif %}
-                {% if user.is_authenticated %}
-                    <p class="login navbar-text">Hi {{ user }}!</p>
-                {% else %}
-                    <p class="login navbar-text">Log in to get baking!</p>
                 {% endif %}
             </ul>
         </div>

@@ -10,13 +10,13 @@
             <div class="row">
                 {% for recipe in recipes %}
                 <div class="col-md-4">
-                    <div class="card mb-4">
+                    <div class="recipe-card">
                         {% if recipe.image %}
                             <img src="{{ recipe.image.url }}"
                                 class="card-img-top"
                                 alt="{{ recipe.title }}">
                         {% else %}
-                            <img src="{% static 'images/placeholder.jpg' %}"
+                            <img src="{% static 'images/baking.jpg' %}"
                                 class="card-img-top"
                                 alt="Recipe placeholder">
                         {% endif %}
@@ -24,10 +24,9 @@
                                 <h2 class="card-title">
                                     <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">{{ recipe.title }}</a>
                                 </h2>
-                                <p class="author">Author: {{recipe.author }}</p>
                             <hr/>
-                            <p class="card-text text-muted h6">{{ recipe.created_on|date:"j F, Y" }}
-                            </p>
+                            <div class="author card-text">Author: {{recipe.author }}</div>
+                            <div class="card-date">{{ recipe.created_on|date:"j F, Y" }} </div>
                         </div>
                     </div>
                 </div>
