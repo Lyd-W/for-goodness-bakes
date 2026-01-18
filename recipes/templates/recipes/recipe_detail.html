@@ -60,11 +60,34 @@
                 This comment is awaiting approval
             </p>
             {% endif %}
-            {% if user.is_authenticated and comment.author == user %}
+            {% if user.is_authenticated and comment.author == user %}  
+                <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
                 <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit your comment</button>
             {% endif %}
         {% endfor %}
 
+<div class="modal" id="deleteModal" tabindex="-1"
+  aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"
+          id="deleteModalLabel">Delete your comment?</h5>
+        <button
+          data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to remove this comment? 
+        You can't have your cake and eat it too. 
+      </div>
+      <div class="modal-footer">
+        <button
+          data-bs-dismiss="modal">Close</button>
+        <a id="deleteConfirm" href="#">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
            
 
         {% if user.is_authenticated %}

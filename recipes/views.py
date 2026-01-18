@@ -62,3 +62,17 @@ def comment_editing(request, slug, comment_id):
             messages.add_message(request, messages.ERROR, 'Oh dear, your comment was not updated. Please try again.')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+def comment_delete(request, slug, comment_id):
+
+    queryset = Recipe.objects.filter(status=1)
+    recipe = get_object_or_404(queryset, slug=slug)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if comment.author == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, 'Your comment has been successfully removed!')
+    else:
+        messages.add_message(request, messages.ERROR, "Sorry, that slice doesn't belong to you")
+
+    return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
