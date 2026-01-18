@@ -85,7 +85,7 @@ p {
 }
 
 .login {
-    color: var(--secondary-color);
+    color: var(--secondary-color);   
 }
 
 /* Recipe cards */
@@ -118,13 +118,21 @@ p {
     text-align: start;
 }
 
+.author{
+    font-size: calc(2rem + 0.6vw);
+}
+
+.card-date {
+    font-size: calc(1rem + 0.6vw);
+}
+
 .card-text {
     color: var(--text);
-    font-size: 1rem;
+    font-size: calc(1rem + 0.6vw);
     padding-left: 0.75rem;
 }
 .card-date {
-    font-size: 0.75rem;
+    font-size: calc(0.7rem + 0.6vw);
     padding-left: 0.75rem;
     padding-bottom: 0.5rem;
 }
@@ -132,6 +140,10 @@ p {
 .recipe-link {
     text-decoration: none;
     color: inherit;
+}
+
+.page-link {
+    margin: 0.5rem;
 }
 
 /* Recipe Detailed View */
@@ -259,6 +271,14 @@ p {
     margin-bottom: 2rem;
    }
 
+   .author{
+    font-size: calc(0.9rem + 0.6vw);
+}
+
+.card-date {
+    font-size: calc(0.6rem + 0.6vw);
+}
+
    .recipe-detail,
    .comment-section {
     padding: 0 7rem;
@@ -266,7 +286,12 @@ p {
 
    .login {
     padding-right: 0.5rem;
+    text-align: end;
    }
+}
+
+.pagination {
+    margin: 1rem;
 }
 
 /* XL devices (xl screens, 1200px and up) */
