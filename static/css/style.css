@@ -178,9 +178,11 @@ p {
     margin:0.5rem;
 }
 
-/* Log Out View */
+/* Accounts*/
 
-.log-out-section {
+.log-out-section,
+.log-in-section,
+.registration-section {
     margin: 0.5rem;
 }
 
