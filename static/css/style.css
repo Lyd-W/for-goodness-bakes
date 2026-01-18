@@ -134,7 +134,7 @@ p {
     color: inherit;
 }
 
-/*Recipe Detailed View*/
+/* Recipe Detailed View */
 
 .recipe-image-container {
     padding-top: 1rem;
@@ -185,11 +185,16 @@ p {
     margin-top: 2rem;
 }
 
+/* remove asterisk from comment label field */
+.asteriskField {
+    display: none;
+}
+
 .submit-button {
     margin:0.5rem;
 }
 
-/* Accounts*/
+/* Accounts */
 
 .log-out-section,
 .log-in-section,
@@ -257,6 +262,10 @@ p {
    .recipe-detail,
    .comment-section {
     padding: 0 7rem;
+   }
+
+   .login {
+    padding-right: 0.5rem;
    }
 }
 

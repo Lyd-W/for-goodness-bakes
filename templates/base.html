@@ -49,8 +49,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse ms-auto" id="navbarText">
-             <div class="navbar-text w-100 text-center mt-2">
+        <div class="collapse navbar-collapse ms-auto flex-lg-column align-items-lg-end" id="navbarText">
+             <div class="navbar-text mt-2">
                 {% if user.is_authenticated %}
                     <p class="login navbar-text">Hi {{ user }}!</p>
                 {% else %}
