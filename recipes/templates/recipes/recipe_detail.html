@@ -5,7 +5,9 @@
 
 <section class="recipe-detail">
 
-    <div class="recipe-image-container">
+<div class="recipe-display row">
+
+    <div class="recipe-image-container col-12 col-lg-4">
         {% if recipe.image %}
             <img src="{{ recipe.image.url }}"
                 class="recipe-image"
@@ -15,12 +17,13 @@
                     class="recipe-image"
                     alt="Recipe placeholder">
         {% endif %}
-
-  <header class="recipe-header">
-    <h2 class="recipe-title">{{ recipe.title }}</h2>
-    <div class="recipe-description">{{recipe.description| safe}}</div>
-    <div class="recipe-meta">{{ recipe.author }} | {{ recipe.created_on|date:"F j, Y" }} </div>
-  </header>
+    </div>
+<div class="recipe-intro col-12 col-lg-8">
+    <header class="recipe-header">
+        <h2 class="recipe-title">{{ recipe.title }}</h2>
+        <div class="recipe-description">{{recipe.description| safe}}</div>
+        <div class="recipe-meta">{{ recipe.author }} | {{ recipe.created_on|date:"F j, Y" }} </div>
+    </header>
 
   <section class="information-section">
     <div class="servings">
@@ -43,16 +46,19 @@
         <p>{{ recipe.prep_time }} minutes</p>
     </div>
   </section>
+</div>
+</div>
+    <div class="instructions row"> 
+        <section class="ingredients-section col-12 col-lg-4">
+            <h3>Ingredients</h3>
+            {{ recipe.ingredients|safe }}
+        </section>
 
-  <section class="ingredients-section">
-    <h3>Ingredients</h3>
-    {{ recipe.ingredients|safe }}
-  </section>
-
-  <section class="recipe-section">
-    <h3>Method</h3>
-    {{ recipe.method|safe }}
-  </section>
+        <section class="recipe-section col-12 col-lg-8">
+            <h3>Method</h3>
+            {{ recipe.method|safe }}
+        </section>
+    </div>
 
 </section>
 

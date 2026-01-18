@@ -155,7 +155,7 @@ p {
 
 .recipe-detail,
 .comment-section{
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem;
 }
 
 .information-section {
@@ -222,4 +222,44 @@ p {
 
 .footer i:hover {
     color: var(--primary-highlight);
+}
+
+/* Media queries */
+
+/* Small devices (mobiles, up to 576px) */
+@media screen and (max-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops, 992px and up) */
+@media screen and (min-width: 992px) {
+
+    h2 {
+        font-size: calc(2rem + 0.6vw);
+    }
+
+    .recipe-description {
+        font-size: calc(1.3rem + 0.6vw);
+    }
+
+    .recipe-meta {
+        font-size: calc(1rem + 0.6vw);
+        margin-top: 0.5rem;
+    }
+
+   .recipe-display {
+    margin-bottom: 2rem;
+   }
+
+   .recipe-detail,
+   .comment-section {
+    padding: 0 7rem;
+   }
+}
+
+/* XL devices (xl screens, 1200px and up) */
+@media screen and (min-width: 1200px) {
 }
