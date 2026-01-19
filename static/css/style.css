@@ -176,6 +176,7 @@ p {
 }
 
 .recipe-description {
+    font-size: calc(0.8rem + 0.6vw);
     margin-bottom: 0.8rem;
 }
 
@@ -185,24 +186,56 @@ p {
 }
 
 .information-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    align-content: center;
+    justify-content: center;
     margin-bottom: 2rem;
 }
 
+.servings{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.difficulty{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.prep-time{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.difficulty{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
 .cook-time,
 .prep-time,
 .difficulty,
 .servings {
     border: 2px solid var(--primary-highlight);
     border-radius: 15px;
-    margin-bottom: 0.75rem;
+    margin: 0.75rem 0.75rem;
     height: auto;
     width: 125px;
     text-align: center;
+    font-size: calc(0.7rem + 0.6vw);
 }
 
+.information-title{
+    font-size: calc(0.7rem + 0.6vw);
+    font-weight: 700;
+}
 .ingredients-title,
 .method-title,
 .comment-title {
@@ -274,6 +307,11 @@ p {
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
+    .information-section{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 2vw;
+    }
 }
 
 /* Large devices (laptops, 992px and up) */
