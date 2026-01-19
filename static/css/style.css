@@ -203,6 +203,12 @@ p {
     text-align: center;
 }
 
+.ingredients-title,
+.method-title,
+.comment-title {
+    font-weight: 700;
+}
+
 .ingredients-section {
     margin-bottom: 2rem;
 }

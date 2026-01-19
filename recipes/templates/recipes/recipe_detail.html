@@ -50,12 +50,12 @@
 </div>
     <div class="instructions row"> 
         <section class="ingredients-section col-12 col-lg-4">
-            <h3>Ingredients</h3>
+            <h3 class="ingredients-title">Ingredients</h3>
             {{ recipe.ingredients|safe }}
         </section>
 
         <section class="recipe-section col-12 col-lg-8">
-            <h3>Method</h3>
+            <h3 class="method-title">Method</h3>
             {{ recipe.method|safe }}
         </section>
     </div>
@@ -69,7 +69,7 @@
     </div>
 
     <div class="comment-display">
-      <h4>Comments:</h4>
+      <h4 class="comment-title">Comments:</h4>
         {% for comment in comments %}
             {% if not comment.approved and comment.author == user %}
             {% elif not comment.approved %}
