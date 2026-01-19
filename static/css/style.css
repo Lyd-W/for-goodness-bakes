@@ -242,8 +242,30 @@ p {
     font-weight: 700;
 }
 
+.instructions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.ingredients-section,
+.recipe-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 .ingredients-section {
+    border: 2px solid var(--primary-highlight);
+    border-radius: 15px;
     margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.recipe-section{
+    border: 2px solid var(--primary-highlight);
+    border-radius: 15px;
+    padding: 1rem;
 }
 
 .comment-section {
@@ -319,20 +341,20 @@ p {
 
     h2 {
         font-size: calc(2rem + 0.6vw);
-    }
+}
 
     .recipe-description {
         font-size: calc(1.1rem + 0.6vw);
-    }
+}
 
     .recipe-meta {
         font-size: calc(0.9rem + 0.6vw);
         margin-top: 0.5rem;
-    }
+ }
 
    .recipe-display {
     margin-bottom: 2rem;
-   }
+}
 
    .author{
     font-size: calc(0.9rem + 0.6vw);
@@ -342,19 +364,32 @@ p {
     font-size: calc(0.6rem + 0.6vw);
 }
 
+    .instructions {
+        flex-wrap: nowrap;
+        align-items: stretch;
+
+}
+
+
+
+    .ingredients-section {
+        margin: 0 1rem 0 0;
+    }
+
    .recipe-detail,
    .comment-section {
     padding: 0 7rem;
-   }
+}
 
    .login {
     padding-right: 0.5rem;
     text-align: end;
-   }
 }
 
-.pagination {
+    .pagination {
     margin: 1rem;
+}
+
 }
 
 /* XL devices (xl screens, 1200px and up) */
