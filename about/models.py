@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 STATUS = (
-    (0, "Draft"), 
+    (0, "Draft"),
     (1, "Published"),
 )
+
 
 class About(models.Model):
     title = models.CharField(max_length=150, unique=True)
@@ -16,16 +17,17 @@ class About(models.Model):
         on_delete=models.CASCADE,
     )
     created_on = models.DateTimeField(auto_now_add=True)
-    updated_on=models.DateTimeField(auto_now=True)
+    updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     content = models.TextField()
-    
+
     class Meta:
         ordering = ["-created_on"]
-            
+
     def __str__(self):
         return self.title
-    
+
+
 class Contact(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()

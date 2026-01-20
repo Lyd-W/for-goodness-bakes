@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 STATUS = (
-    (0, "Draft"), 
+    (0, "Draft"),
     (1, "Published"),
 )
 
@@ -32,15 +32,14 @@ class Recipe(models.Model):
     servings = models.PositiveIntegerField()
     difficulty = models.PositiveIntegerField(choices=DIFFICULTY_LEVELS)
     status = models.IntegerField(choices=STATUS, default=0)
-    
+
     class Meta:
         ordering = ["-created_on"]
-            
+
     def __str__(self):
         return self.title
-    
-    
-    
+
+
 class Comment(models.Model):
     author = models.ForeignKey(
         User,
@@ -51,14 +50,14 @@ class Comment(models.Model):
         Recipe,
         on_delete=models.CASCADE,
         related_name="comments"
-    )    
+    )
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
-    
+
     class Meta:
-        ordering = ["-created_on"] 
-    
+        ordering = ["-created_on"]
+
     def __str__(self):
         return f"Comment on {self.comment_on} by {self.author}"
