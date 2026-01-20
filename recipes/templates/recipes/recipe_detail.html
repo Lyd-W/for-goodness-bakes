@@ -86,7 +86,7 @@
             {% endif %}
             {% if user.is_authenticated and comment.author == user %}  
                 <button class="button btn-delete" comment_id="{{ comment.id }}">Delete</button>
-                <button class="button btn-edit" comment_id="{{ comment.id }}">Edit your comment</button>
+                <button class="button btn-edit" comment_id="{{ comment.id }}">Edit</button>
             {% endif %}
         {% endfor %}
     </div>
@@ -109,7 +109,7 @@
                     <div class="modal-footer">
                         <button class="button"
                         data-bs-dismiss="modal">Close</button>
-                        <a class="button" id="deleteConfirm" href="#">Delete</a>
+                        <a class="button button-delete" id="deleteConfirm" href="#">Delete</a>
                     </div>
             </div>
         </div>

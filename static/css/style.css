@@ -4,6 +4,8 @@
   --primary-highlight: #C97A5D; /* burnt peach */
   --secondary-highlight: #A8C3B1; /* ash grey */
   --text: #2B2B2B; /* graphite */
+  --danger: #E8B7C8; /* soft blossom */
+  --success: #A8C3B1; /* ash grey */
 }
 
 body {
@@ -32,21 +34,32 @@ p {
 }
 
 .button {
-    border: 1px solid var(--text);
-    background-color: var(--secondary-highlight);
+    border: 1px solid var(--primary-highlight);
+    background-color: var(--text);
     border-radius: 10px;
-    color: var(--text);
+    color: var(--primary-color);
     text-decoration: none;
-    padding: 0.25rem;
+    padding: 0.25rem 0.5rem;
     width: auto;
     height: auto;
 }
 
 .button:hover {
-    border: 1px solid var(--primary-highlight);
-    background-color: var(--secondary-color);
+    border: 1px solid var(--text);
+    background-color: var(--primary-highlight);
     border-radius: 10px;
     color: var(--text);
+}
+
+.btn-delete:hover,
+.button-delete:hover,
+.log-out-button:hover {
+    background-color: var(--danger);
+}
+
+.button-send:hover,
+.submit-button:hover {
+    background-color: var(--success);
 }
 
 /* Nav bar */
@@ -101,7 +114,6 @@ p {
 }
 
 /* Recipe cards */
-
 .card-img-top {
     height: 300px;
     object-fit: cover;
@@ -151,7 +163,6 @@ p {
 }
 
 /* Recipe Detailed View */
-
 .recipe-image-container {
     padding-top: 1rem;
 }
@@ -286,7 +297,6 @@ p {
 }
 
 /* Accounts */
-
 .log-out-section,
 .log-in-section,
 .registration-section {
@@ -294,13 +304,11 @@ p {
 }
 
 /* About */
-
 .about-section {
     margin: 0.5rem;
 }
 
 /* Footer */
-
 .footer {
     background-color: #2B2B2B;
     color: var(--primary-color);
