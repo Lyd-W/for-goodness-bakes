@@ -174,6 +174,9 @@ To visualise different colours together [Coolors Scheme](https://coolors.co/2b2b
 | --primary-highlight | #C97A5D | Button hover and borders, submission button |
 | --secondary-highlight | #A8C3B1 | Secondary buttons, success messages |
 | --text | #2B2B2B | Primary text colour |
+| --danger | #E8B7C8 | Danger buttons (delete, log out) |
+| --success | #A8C3B1 | Success button (send, submit) |
+
 
 ### Images
 
@@ -411,7 +414,29 @@ The project was deployed to Heroku from VS Code early on, this allowed for more 
 
 #### Images:
 
+All images were sourced from Unsplash and Pexels and are used in accordance with their respective free-use licences. Attribution is provided where recommended.
+
+- Almond Biscotti [Cook Eat](https://www.pexels.com/photo/sliced-bread-on-green-surface-776859/ "Pexels | Cook Eat")
 - [Favicon.io](https://favicon.io "Favicon.io")
+- Baked Vanilla Cheesecake [A Studios](https://unsplash.com/photos/a-piece-of-cheesecake-on-a-plate-next-to-a-cup-of-tea-rWAwhghF4ag "Unsplash | A Studios")
+- Banana Bread [Jeff Siepman](https://unsplash.com/photos/sliced-cakes-MssPSnkV1yM "Unsplash | Jeff Siepman")
+- Blueberry Muffins [Joshua Flores](https://unsplash.com/photos/brown-cupcakes-on-white-ceramic-plate-5RQffqRkmWQ "Unsplash | Joshua Flores")
+- Chocolate Cake [Polina Tankilevitch](https://www.pexels.com/photo/person-eating-chocolate-cake-4187672/ "Pexels | Polina Tankilevitch")
+- Chocolate Cheesecake [American Heritage Chocolate](https://unsplash.com/photos/a-slice-of-chocolate-cheesecake-with-a-strawberry-on-top-DOWsiEekKIA "Unsplash | American Heritage Chocolate")
+- Chocolate Chip Banana Bread [Dasha Klimova](https://www.pexels.com/photo/photograph-of-brown-cake-9928323/ "Pexels | Dasha Klimova")
+- Chocolate Chip Cookies [Brigitte Tohm](https://www.pexels.com/photo/brown-cookies-189536/ "Pexels | Brigitte Tohm")
+- Chocolate Fudge Cake [Richard Bell](https://unsplash.com/photos/a-piece-of-chocolate-cake-on-a-plate-Oul4t1hvQZQ "Unsplash | Richard Bell")
+- Chocolate Mousse [American Heritage Chocolate](https://unsplash.com/photos/two-bowls-of-chocolate-pudding-with-raspberries-on-the-side-YxjIO0LmDO0 "Unsplash | American Heritage Chocolate")
+- Crème Brûlée [Max Griss](https://unsplash.com/photos/white-ceramic-bowl-with-brown-soup-Wp7ZsJYWP0M "Unsplash | Max Griss")
+- Double Chocolate Cookies [Karolina Bobek](https://unsplash.com/photos/cookies-on-white-and-blue-ceramic-plate-hgzPdjwSHEI "Unsplash | Karolina Bobek")
+- Fudgy Chocolate Brownie [Saveurs Secretes](https://www.pexels.com/photo/slices-of-chocolate-brownies-5410404/ "Pexels | Saveurs Secretes")
+- Jamie and Oliver – [Julien Lenoir](https://unsplash.com/photos/a-couple-of-men-standing-next-to-each-other-in-a-kitchen-9WalxeSSSak "Unsplash | Julien Lenoir"). Image edited using [ChatGPT](https://chatgpt.com/ "ChatGPT | Homepage") to remove visible logos.
+- Lemon Shortbread Cookies [Kader D. Kahraman](https://www.pexels.com/photo/heap-of-cookies-15776576/ "Pexels | Kader D. Kahraman")
+- Placeholder for recipe images [Calum Lewis](https://unsplash.com/photos/wooden-ladle-and-spatula-on-top-of-table-rkT_TG5NKF8 "Unsplash | Calum Lewis")
+- Shortbread Biscuits [Shay Wood](https://www.pexels.com/photo/white-and-blue-ceramic-saucer-574125/ "Pexels | Shay Wood")
+- Strawberry Victoria Sponge [Becky Fantham](https://unsplash.com/photos/fruit-cake-on-blue-cake-holder-DIUJSBiJNoc "Unsplash | Becky Fantham")
+- Vanilla Blondie [Liana S](https://unsplash.com/photos/a-person-holding-a-piece-of-cake-on-a-wooden-plate-1vsupadWQDI "Unsplash | Liana S")
+- Victoria Sponge [Nick Fewings](https://unsplash.com/photos/brown-bread-on-stainless-steel-plate-9t_v5yHAW-o "Unsplash | Nick Fewings")
 
 #### Visual Content:
 
