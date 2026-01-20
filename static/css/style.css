@@ -4,7 +4,7 @@
   --primary-highlight: #C97A5D; /* burnt peach */
   --secondary-highlight: #A8C3B1; /* ash grey */
   --text: #2B2B2B; /* graphite */
-  --danger: #E8B7C8; /* soft blossom */
+  --danger: #FF0000; /* red */
   --success: #A8C3B1; /* ash grey */
 }
 
@@ -23,7 +23,7 @@ h2 {
 }
 
 h3 {
-    font-size: calc(0.9rem + 0.6vw);
+    font-size: 1.2rem;
     margin: 0;
     color: var(--text);
 }
@@ -46,20 +46,20 @@ p {
 
 .button:hover {
     border: 1px solid var(--text);
-    background-color: var(--primary-highlight);
+    background-color: var(--text);
     border-radius: 10px;
-    color: var(--text);
+    color: var(--primary-highlight);
 }
 
 .btn-delete:hover,
 .button-delete:hover,
 .log-out-button:hover {
-    background-color: var(--danger);
+    color: var(--danger);
 }
 
 .button-send:hover,
 .submit-button:hover {
-    background-color: var(--success);
+    color: var(--success);
 }
 
 /* Nav bar */
@@ -287,9 +287,42 @@ p {
     margin-top: 2rem;
 }
 
+.comment-title {
+    font-weight: 700;
+}
+
+.poster-name {
+    margin-top: 1rem;
+}
+
+.username {
+    font-weight: 700;
+}
+
+.comment-card {
+    border: 2px solid var(--primary-highlight);
+    border-radius: 15px;
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
 /* remove asterisk from comment label field */
 .asteriskField {
     display: none;
+}
+
+.comment-date {
+    font-size: 0.8rem;
+}
+
+.approval {
+    font-style: italic;
+}
+
+.comment-button,
+.comment-content,
+.approval {
+    margin-top: 1rem;
 }
 
 .submit-button {
@@ -387,6 +420,10 @@ p {
         margin-right: 4vw; 
     }
 
+    .comment-section {
+        margin: 2rem 2rem 0 2rem
+    }
+
 }
 
 /* Large devices (laptops, 992px and up) */
@@ -453,6 +490,20 @@ p {
     padding: 0 7rem;
     }
 
+    .comment-view{
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 2rem;
+    }
+
+    .comment-form {
+         flex: 1;
+    }
+
+    .comment-display {
+        flex: 1;
+    }
+
    .login {
     padding-right: 0.5rem;
     text-align: end;
@@ -460,6 +511,10 @@ p {
 
     .pagination {
     margin: 1rem;
+    }
+
+    .footer {
+        margin-top: 1.5rem !important;
     }
 
 }
