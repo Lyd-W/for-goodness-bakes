@@ -101,7 +101,7 @@ p {
     filter: brightness(0) invert(1);
 }
 
-.login {
+.login-nav {
     color: var(--secondary-color);   
 }
 
@@ -213,7 +213,7 @@ p {
     grid-row-end: 3;
 }
 
-.difficulty{
+.cook-time {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -333,7 +333,34 @@ p {
 .log-out-section,
 .log-in-section,
 .registration-section {
-    margin: 0.5rem;
+    margin: 1rem 2rem 2rem 2rem;
+}
+
+.register-heading,
+.login-heading,
+.logout-heading {
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.register-text,
+.login-text,
+.logout-text {
+    margin-bottom: 1rem;
+}
+
+
+form label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+form input {
+    margin-bottom: 1rem;
+}
+
+.register-button {
+    margin-top: 0.5rem;
 }
 
 /* About */
@@ -424,6 +451,12 @@ p {
         margin: 2rem 2rem 0 2rem
     }
 
+    .log-out-section,
+    .log-in-section,
+    .registration-section {
+        margin-left: 32%;
+        margin-right: 25%;
+    }
 }
 
 /* Large devices (laptops, 992px and up) */
@@ -434,6 +467,10 @@ p {
 
     h2 {
         font-size: 2.5rem;
+    }
+
+    .login-nav {
+        text-align: end;
     }
 
     .recipe-description {
@@ -504,17 +541,13 @@ p {
         flex: 1;
     }
 
-   .login {
-    padding-right: 0.5rem;
-    text-align: end;
+    .submit-button {
+        margin-bottom: 1.5rem;
     }
+
 
     .pagination {
     margin: 1rem;
-    }
-
-    .footer {
-        margin-top: 1.5rem !important;
     }
 
 }

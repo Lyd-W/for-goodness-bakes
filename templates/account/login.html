@@ -8,9 +8,10 @@
 {% block content %}
 
 <section class="log-in-section">
-            <h3>{% trans "Log In" %}</h3>
+            <h2 class="login-heading">{% trans "Log In" %}</h2>
 
-            <p>{% blocktrans %}Hi again! Please log in to leave comments. 
+            <p class="login-text">{% blocktrans %}Hey there! 
+              <br>Please log in to leave comments. 
               <br>If you haven't joined our community yet, please register <a class="link" href="{{ signup_url }}">here</a>.  {% endblocktrans %}</p>
 
         <form class="login" method="POST" action="{% url 'account_login' %}">
