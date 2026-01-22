@@ -7,32 +7,44 @@
 <section class="about-section">
 
   <header class="about-header">
-    <h2>{{ about.title }}</h2>
-    <p class="about-meta">
-   {{ about.created_on|date:"F j, Y" }}
-    </p>
+    <h2 class="about-heading">{{ about.title }}</h2>
   </header>
-
-  <div class="about-image">
-    <img src="{% static '#' %}" alt="About placeholder image">
+  <section class="about-information">
+  <div class="profile-image-container"> 
+          {% if about.image %}
+            <img src="{{ about.image.url }}"
+                class="about-image"
+                alt="{{ about.title }}">
+            {% else %}  
+            <img src="{% static 'images/placeholder-profile.png' %}"
+              class="profile-placeholder"
+              alt="About placeholder image">
+          {% endif %}
+    </div>
   </div>
-
-  <section class="about-section">
-    <h3>About</h3>
+  
+  <section class="about-text">
     <p>{{ about.content | safe }}</p>
+
+        <p class="about-meta">
+   Updated on: {{ about.created_on|date:"F j, Y" }}
+    </p>
   </section>
+  </section>
+<hr>
+<section class="contact-section">
+  <h2 class="contact-heading">Get in touch</h2>
 
-
-<h2>Get in touch</h2>
-
-<p> Got a craving you wish to satisfy or a favourite recipe to share? 
+  <p class="contact-text"> Got a craving you wish to satisfy or a favourite recipe to share? 
+    <br>
     <br>Contact us using the form below.</p>
 
-      <form method="post">
+      <form class="contact-form" method="post">
         {{ contact_form | crispy }}
         {% csrf_token %}
-        <button class ="button button-send" type="submit">Send</button>
+        <button class ="button submit-button contact-button button-send" type="submit">Send</button>
       </form>
+</section>
 
 
  {% endblock content %}
