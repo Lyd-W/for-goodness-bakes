@@ -1,23 +1,23 @@
-{% extends "base.html" %}
-{% load i18n %}
-
-{% block head_title %}{% trans "Log Out" %}{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% load i18n %} {% block head_title %}{% trans "Log
+Out" %}{% endblock %} {% block content %}
 
 <section class="log-out-section">
-            <h2 class="logout-heading">{% trans "Log Out" %}</h2>
+  <h2 class="logout-heading">{% trans "Log Out" %}</h2>
 
-            <p class="logout-text">{% trans 'Are you sure you want to log out?' %}</p>
+  <p class="logout-text">{% trans 'Are you sure you want to log out?' %}</p>
 
-
-            <form method="post" action="{% url 'account_logout' %}">
-                {% csrf_token %}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="button log-out-button" type="submit">{% trans 'Log Out' %}</button>
-            </form>
+  <form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %} {% if redirect_field_value %}
+    <input
+      type="hidden"
+      name="{{ redirect_field_name }}"
+      value="{{ redirect_field_value }}"
+    />
+    {% endif %}
+    <button class="button log-out-button" type="submit">
+      {% trans 'Log Out' %}
+    </button>
+  </form>
 </section>
 
 {% endblock %}

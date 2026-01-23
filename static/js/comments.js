@@ -10,13 +10,15 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 for (let button of editButtons) {
   button.addEventListener("click", (e) => {
     let commentId = e.target.getAttribute("comment_id");
-    let commentContent = document.getElementById(`comment${commentId}`).innerText;
+    let commentContent = document.getElementById(
+      `comment${commentId}`,
+    ).innerText;
     let hiddenInput = commentForm.querySelector("input[name='comment_id']");
     if (!hiddenInput) {
-    hiddenInput = document.createElement("input");
-    hiddenInput.type = "hidden";
-    hiddenInput.name = "comment_id";
-    commentForm.appendChild(hiddenInput);
+      hiddenInput = document.createElement("input");
+      hiddenInput.type = "hidden";
+      hiddenInput.name = "comment_id";
+      commentForm.appendChild(hiddenInput);
     }
     hiddenInput.value = commentId;
     commentText.value = commentContent;

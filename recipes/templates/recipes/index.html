@@ -1,51 +1,64 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
 <div class="container-fluid">
-    <div class="card-display row">
-        <div class="col-12 mt-3">
-            <div class="row g-4">
-                {% for recipe in recipes %}
-                <div class="col-md-4 d-flex">
-                    <div class="recipe-card h-100 w-100">
-                        {% if recipe.image %}
-                            <img src="{{ recipe.image.url }}"
-                                class="card-img-top"
-                                alt="{{ recipe.title }}">
-                        {% else %}
-                            <img src="{% static 'images/baking.jpg' %}"
-                                class="card-img-top"
-                                alt="Recipe placeholder">
-                        {% endif %}
-                            <div class="card-body">
-                                <h2 class="card-title">
-                                    <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">{{ recipe.title }}</a>
-                                </h2>
-                            <hr/>
-                            <div class="author card-text">Author: {{recipe.author }}</div>
-                            <div class="card-date">{{ recipe.created_on|date:"j F, Y" }} </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-
+  <div class="card-display row">
+    <div class="col-12 mt-3">
+      <div class="row g-4">
+        {% for recipe in recipes %}
+        <div class="col-md-4 d-flex">
+          <div class="recipe-card h-100 w-100">
+            {% if recipe.image %}
+            <img
+              src="{{ recipe.image.url }}"
+              class="card-img-top"
+              alt="{{ recipe.title }}"
+            />
+            {% else %}
+            <img
+              src="{% static 'images/baking.jpg' %}"
+              class="card-img-top"
+              alt="Recipe placeholder"
+            />
+            {% endif %}
+            <div class="card-body">
+              <h2 class="card-title">
+                <a
+                  href="{% url 'recipe_detail' recipe.slug %}"
+                  class="recipe-link"
+                  >{{ recipe.title }}</a
+                >
+              </h2>
+              <hr />
+              <div class="author card-text">Author: {{recipe.author }}</div>
+              <div class="card-date">{{ recipe.created_on|date:"j F, Y" }}</div>
             </div>
+          </div>
         </div>
+        {% endfor %}
+      </div>
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="button page-link">&laquo; prev</a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="button page-link">next &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+  </div>
+  {% if is_paginated %}
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+      <li>
+        <a
+          href="?page={{ page_obj.previous_page_number }}"
+          class="button page-link"
+          >&laquo; prev</a
+        >
+      </li>
+      {% endif %} {% if page_obj.has_next %}
+      <li>
+        <a href="?page={{ page_obj.next_page_number }}" class="button page-link"
+          >next &raquo;</a
+        >
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
 </div>
 
 {% endblock %}

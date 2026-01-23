@@ -1,147 +1,158 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load crispy_forms_tags %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% load crispy_forms_tags %} {%
+block content %}
 
 <section class="recipe-detail">
-
-<div class="recipe-display row">
-
+  <div class="recipe-display row">
     <div class="recipe-image-container col-12 col-lg-4">
-        {% if recipe.image %}
-            <img src="{{ recipe.image.url }}"
-                class="recipe-image"
-                alt="{{ recipe.title }}">
-            {% else %}
-                <img src="{% static 'images/baking.jpg' %}"
-                    class="recipe-image"
-                    alt="Recipe placeholder">
-        {% endif %}
+      {% if recipe.image %}
+      <img
+        src="{{ recipe.image.url }}"
+        class="recipe-image"
+        alt="{{ recipe.title }}"
+      />
+      {% else %}
+      <img
+        src="{% static 'images/baking.jpg' %}"
+        class="recipe-image"
+        alt="Recipe placeholder"
+      />
+      {% endif %}
     </div>
-<div class="recipe-intro col-12 col-lg-8">
-    <header class="recipe-header">
+    <div class="recipe-intro col-12 col-lg-8">
+      <header class="recipe-header">
         <h2 class="recipe-title">{{ recipe.title }}</h2>
         <div class="recipe-description">{{recipe.description| safe}}</div>
-        <div class="recipe-meta">{{ recipe.author }} | {{ recipe.created_on|date:"F j, Y" }} </div>
-    </header>
+        <div class="recipe-meta">
+          {{ recipe.author }} | {{ recipe.created_on|date:"F j, Y" }}
+        </div>
+      </header>
 
-  <section class="information-section">
-    <div class="servings">
-        <h3 class="information-title">Servings:</h3>
-        <p>{{ recipe.servings }}</p>
+      <section class="information-section">
+        <div class="servings">
+          <h3 class="information-title">Servings:</h3>
+          <p>{{ recipe.servings }}</p>
+        </div>
+
+        <div class="difficulty">
+          <h3 class="information-title">Difficulty:</h3>
+          <p>{{ recipe.get_difficulty_display }}</p>
+        </div>
+
+        <div class="cook-time">
+          <h3 class="information-title">Cook Time:</h3>
+          <p>{{ recipe.cook_time }} mins</p>
+        </div>
+
+        <div class="prep-time">
+          <h3 class="information-title">Prep Time:</h3>
+          <p>{{ recipe.prep_time }} mins</p>
+        </div>
+      </section>
     </div>
+  </div>
+  <div class="instructions">
+    <section class="ingredients-section">
+      <h3 class="ingredients-title">Ingredients</h3>
+      {{ recipe.ingredients|safe }}
+    </section>
 
-    <div class="difficulty">
-        <h3 class="information-title">Difficulty:</h3>
-        <p>{{ recipe.get_difficulty_display }}</p>
-    </div>
-
-    <div class="cook-time">
-        <h3 class="information-title">Cook Time:</h3>
-        <p>{{ recipe.cook_time }} mins</p>
-    </div>
-
-    <div class="prep-time">
-        <h3 class="information-title">Prep Time:</h3>
-        <p>{{ recipe.prep_time }} mins</p>
-    </div>
-  </section>
-</div>
-</div>
-    <div class="instructions"> 
-        <section class="ingredients-section">
-            <h3 class="ingredients-title">Ingredients</h3>
-            {{ recipe.ingredients|safe }}
-        </section>
-
-        <section class="recipe-section">
-            <h3 class="method-title">Method</h3>
-            {{ recipe.method|safe }}
-        </section>
-    </div>
-
+    <section class="recipe-section">
+      <h3 class="method-title">Method</h3>
+      {{ recipe.method|safe }}
+    </section>
+  </div>
 </section>
 
 <section class="comment-section">
-
-<div class="comment-count">
-        <i class="fa-regular fa-comment"></i> {{ comment_count }}
-    </div>
-    <hr>
-    <div class="comment-view">
+  <div class="comment-count">
+    <i class="fa-regular fa-comment"></i> {{ comment_count }}
+  </div>
+  <hr />
+  <div class="comment-view">
     {% if user.is_authenticated %}
-        <div class="comment-form">
-            <h3 class="comment-title">Leave a comment:</h3>
-            <p class="poster-name">Posting as: <span class="username">{{ user.username }}</span></p>
-            <form id="commentForm" method="post"
-            style="margin-top: 1.3em;">
-            {{ comment_form | crispy }}
-            {% csrf_token %}
-            <button class="button submit-button" id="submitButton" type="submit">
-                Submit
-            </button>
-            </form>
-            {% else %}
-            <p>Log in to leave a comment</p>
-        </div>
+    <div class="comment-form">
+      <h3 class="comment-title">Leave a comment:</h3>
+      <p class="poster-name">
+        Posting as: <span class="username">{{ user.username }}</span>
+      </p>
+      <form id="commentForm" method="post" style="margin-top: 1.3em">
+        {{ comment_form | crispy }} {% csrf_token %}
+        <button class="button submit-button" id="submitButton" type="submit">
+          Submit
+        </button>
+      </form>
+      {% else %}
+      <p>Log in to leave a comment</p>
+    </div>
     {% endif %}
+  </div>
+  <hr />
+  <div class="comment-display">
+    <h3 class="comment-title">Comments:</h3>
+    {% for comment in comments %}
+    <div class="comment-card">
+      {% if not comment.approved and comment.author == user %} {% elif not
+      comment.approved %} {% endif %}
+      <div class="comment-author">
+        <span class="username">{{ comment.author }}</span>
+        <br />
+        <span class="comment-date">{{ comment.created_on }}</span>
+      </div>
+      <div class="comment-content" id="comment{{ comment.id }}">
+        {{ comment.content | linebreaks }}
+      </div>
+      {% if not comment.approved and comment.author == user %}
+      <p class="approval">This comment is awaiting approval</p>
+      {% endif %} {% if user.is_authenticated and comment.author == user %}
+      <button
+        class="button btn-delete comment-button"
+        comment_id="{{ comment.id }}"
+      >
+        Delete
+      </button>
+      <button
+        class="button btn-edit comment-button"
+        comment_id="{{ comment.id }}"
+      >
+        Edit
+      </button>
+      {% endif %}
     </div>
-    <hr>
-    <div class="comment-display">
-            <h3 class="comment-title">Comments:</h3>
-            {% for comment in comments %}
-                <div class="comment-card">
-                    {% if not comment.approved and comment.author == user %}
-                        {% elif not comment.approved %}
-                    {% endif %}
-                    <div class="comment-author"><span class="username">{{ comment.author }}</span>
-                        <br>
-                        <span class="comment-date">{{ comment.created_on }}</span></div>
-                        <div class="comment-content" id="comment{{ comment.id }}">
-                            {{ comment.content | linebreaks }}
-                        </div>
-                        {% if not comment.approved and comment.author == user %}
-                            <p class="approval">
-                                This comment is awaiting approval
-                            </p>
-                        {% endif %}
-                        {% if user.is_authenticated and comment.author == user %}  
-                            <button class="button btn-delete comment-button" comment_id="{{ comment.id }}">Delete</button>
-                            <button class="button btn-edit comment-button" comment_id="{{ comment.id }}">Edit</button>
-                        {% endif %}
-                </div>
-            {% endfor %}   
-    </div>
+    {% endfor %}
+  </div>
 
-
-    <div class="modal" id="deleteModal" tabindex="-1"
-        aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"
-                        id="deleteModalLabel">Delete your comment?</h5>
-                            <button class="btn-close"
-                                data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                    <div class="modal-body">
-                        Are you sure you want to remove this comment? 
-                        You can't have your cake and eat it too. 
-                    </div>
-                    <div class="modal-footer">
-                        <button class="button"
-                        data-bs-dismiss="modal">Close</button>
-                        <a class="button button-delete" id="deleteConfirm" href="#">Delete</a>
-                    </div>
-            </div>
+  <div
+    class="modal"
+    id="deleteModal"
+    tabindex="-1"
+    aria-labelledby="deleteModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">
+            Delete your comment?
+          </h5>
+          <button
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
+        <div class="modal-body">
+          Are you sure you want to remove this comment? You can't have your cake
+          and eat it too.
+        </div>
+        <div class="modal-footer">
+          <button class="button" data-bs-dismiss="modal">Close</button>
+          <a class="button button-delete" id="deleteConfirm" href="#">Delete</a>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </section>
 
-
-{% endblock content %}
-
-{% block extras %}
+{% endblock content %} {% block extras %}
 <script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}

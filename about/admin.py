@@ -7,23 +7,24 @@ from .models import About, Contact
 class AboutAdmin(SummernoteModelAdmin):
 
     list_display = (
-        'title',
-        'author',
-        'status',
-        'created_on',
+        "title",
+        "author",
+        "status",
+        "created_on",
     )
 
-    search_fields = ['title']
-    list_filter = ('status', 'created_on')
+    search_fields = ["title"]
+    list_filter = ("status", "created_on")
 
-    prepopulated_fields = {'slug': ('title',)}
+    prepopulated_fields = {"slug": ("title",)}
 
-    summernote_fields = (
-        'content',
-    )
+    summernote_fields = ("content",)
 
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
 
-    list_display = ('message', 'read',)
+    list_display = (
+        "message",
+        "read",
+    )

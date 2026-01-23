@@ -11,7 +11,7 @@ STATUS = (
 class About(models.Model):
     title = models.CharField(max_length=150, unique=True)
     slug = models.SlugField(max_length=150, unique=True)
-    image = CloudinaryField('image')
+    image = CloudinaryField("image")
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,

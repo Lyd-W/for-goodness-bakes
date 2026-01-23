@@ -17,11 +17,9 @@ DIFFICULTY_LEVELS = (
 class Recipe(models.Model):
     title = models.CharField(max_length=150, unique=True)
     slug = models.SlugField(max_length=150, unique=True)
-    image = CloudinaryField('image')
+    image = CloudinaryField("image")
     author = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        related_name="recipes"
+        User, on_delete=models.CASCADE, related_name="recipes"
     )
     created_on = models.DateTimeField(auto_now_add=True)
     description = models.TextField()
@@ -42,14 +40,10 @@ class Recipe(models.Model):
 
 class Comment(models.Model):
     author = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        related_name="comments"
+        User, on_delete=models.CASCADE, related_name="comments"
     )
     comment_on = models.ForeignKey(
-        Recipe,
-        on_delete=models.CASCADE,
-        related_name="comments"
+        Recipe, on_delete=models.CASCADE, related_name="comments"
     )
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

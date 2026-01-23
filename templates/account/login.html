@@ -1,26 +1,24 @@
-{% extends "base.html" %}
-
-{% load i18n %}
-{% load account socialaccount %}
-
-{% block head_title %}{% trans "Log In" %}{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% load i18n %} {% load account socialaccount %} {%
+block head_title %}{% trans "Log In" %}{% endblock %} {% block content %}
 
 <section class="log-in-section">
-            <h2 class="login-heading">{% trans "Log In" %}</h2>
+  <h2 class="login-heading">{% trans "Log In" %}</h2>
 
-            <p class="login-text">{% blocktrans %}Hey there! 
-              <br>Please log in to leave comments. 
-              <br>If you haven't joined our community yet, please register <a class="link" href="{{ signup_url }}">here</a>.  {% endblocktrans %}</p>
+  <p class="login-text">
+    {% blocktrans %}Hey there! <br />Please log in to leave comments. <br />If
+    you haven't joined our community yet, please register
+    <a class="link" href="{{ signup_url }}">here</a>. {% endblocktrans %}
+  </p>
 
-        <form class="login" method="POST" action="{% url 'account_login' %}">
-            {% csrf_token %}
-            {{ form.as_p }}
-            {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-            {% endif %}
-            <button class="button" type="submit">{% trans "Log In" %}</button>
-        </form>
-      </section>
+  <form class="login" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
+    <input
+      type="hidden"
+      name="{{ redirect_field_name }}"
+      value="{{ redirect_field_value }}"
+    />
+    {% endif %}
+    <button class="button" type="submit">{% trans "Log In" %}</button>
+  </form>
+</section>
 {% endblock %}
