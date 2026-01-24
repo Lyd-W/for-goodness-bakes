@@ -67,7 +67,7 @@ def comment_editing(request, slug, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id, comment_on=recipe)
 
     if comment.author != request.user:
-        messages.error(request, "That's not your cake to decroate")
+        messages.error(request, "That's not your cake to decorate")
         return redirect("recipe_detail", slug=slug)
 
     if request.method == "POST":
