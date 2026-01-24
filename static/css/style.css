@@ -455,6 +455,17 @@ form input {
   color: var(--primary-highlight);
 }
 
+.error-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.error-button-wrapper {
+  margin-top: 2rem;
+}
+
 /* Media queries */
 
 /* Small devices (mobiles, up to 576px) */
