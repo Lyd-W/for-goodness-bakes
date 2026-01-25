@@ -63,7 +63,7 @@ p {
   color: var(--success);
 }
 
-.button:focus-visible, 
+.button:focus-visible,
 .button:focus {
   outline: solid #88b9fc;
   outline-width: 0.3rem;
@@ -321,6 +321,12 @@ p {
 
 .comment-date {
   font-size: 0.8rem;
+}
+
+.comment-data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .approval {

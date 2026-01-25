@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-{%block content %}
+{% block content %}
 
 <section class="recipe-detail">
   <div class="recipe-display row">
@@ -92,14 +92,13 @@
   <div class="comment-display">
     <h3 class="comment-title">Comments:</h3>
     {% for comment in comments %}
-    <div class="comment-card">
-      {% if not comment.approved and comment.author == user %} 
-      {% elif not comment.approved %} {% endif %}
-      <div class="comment-author">
+    <article class="comment-card">
+      <header class="comment-data">
         <span class="username">{{ comment.author }}</span>
-        <br />
-        <span class="comment-date">{{ comment.created_on }}</span>
-      </div>
+        <time class="comment-date" datetime="{{ comment.created_on}}">
+          {{ comment.created_on }}
+        </time>
+      </header>
       <div class="comment-content" id="comment{{ comment.id }}">
         {{ comment.content | linebreaks }}
       </div>
@@ -119,7 +118,7 @@
         Edit
       </button>
       {% endif %}
-    </div>
+    </article>
     {% endfor %}
   </div>
 

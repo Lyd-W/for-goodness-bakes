@@ -1,7 +1,8 @@
 {% load static %}
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
-{%url 'account_login' as login_url %} {% url 'account_signup' as signup_url %}
+{%url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
 {%url 'account_logout' as logout_url %}
 
 <!doctype html>
@@ -164,8 +165,7 @@
     {% endfor %}
 
     <main class="flex-shrink-0 background">
-      {% block content %} 
-      {% endblock content %}
+      {% block content %} {% endblock content %}
     </main>
 
     <!-- Footer -->
@@ -214,7 +214,7 @@
       crossorigin="anonymous"
     ></script>
 
-    {% block extras %} 
+    {% block extras %}
     {% endblock %}
 
     <script src="{% static 'js/comments.js' %}"></script>

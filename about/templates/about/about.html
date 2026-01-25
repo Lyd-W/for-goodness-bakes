@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
-{%block content %}
+{% block content %}
 
 <section class="about-section">
   <header class="about-header">
     <h2 class="about-heading">{{ about.title }}</h2>
   </header>
-  <section class="about-information">
+  <div class="about-information">
     <div class="profile-image-container">
       {% if about.image %}
       <img
@@ -24,12 +24,12 @@
       {% endif %}
     </div>
 
-    <section class="about-text">
+    <div class="about-text">
       <p>{{ about.content | safe }}</p>
 
       <p class="about-meta">Updated on: {{ about.created_on|date:"F j, Y" }}</p>
-    </section>
-  </section>
+    </div>
+  </div>
   <hr />
   <section class="contact-section">
     <h2 class="contact-heading">Get in touch</h2>
@@ -50,6 +50,5 @@
       </button>
     </form>
   </section>
-
-  {% endblock content %}
 </section>
+{% endblock content %}
