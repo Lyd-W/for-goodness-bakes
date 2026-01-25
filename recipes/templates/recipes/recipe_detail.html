@@ -100,7 +100,7 @@
           <h3 class="username">{{ comment.author }}</h3>
           <time
             class="comment-date"
-            datetime="{{ comment.created_on|date:'Y-m-d \\a\\ H:i' }}"
+            datetime="{{ comment.created_on|date:'Y-m-d H:i' }}"
           >
             {{ comment.created_on|date:"F j, Y \\a\\t g:i a" }}
           </time>
