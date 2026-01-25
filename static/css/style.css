@@ -63,6 +63,12 @@ p {
   color: var(--success);
 }
 
+.button:focus-visible, 
+.button:focus {
+  outline: solid #88b9fc;
+  outline-width: 0.3rem;
+}
+
 /* Nav bar */
 .navbar {
   background-color: #2b2b2b;
