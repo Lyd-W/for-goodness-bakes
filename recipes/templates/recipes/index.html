@@ -14,13 +14,13 @@
               src="{{ recipe.image.url }}"
               class="card-img-top"
               alt="{{ recipe.title }}"
-            />
+            >
             {% else %}
             <img
               src="{% static 'images/baking.jpg' %}"
               class="card-img-top"
               alt="Recipe placeholder"
-            />
+            >
             {% endif %}
             <div class="card-body">
               <h2 class="card-title">
@@ -30,7 +30,7 @@
                   >{{ recipe.title }}</a
                 >
               </h2>
-              <hr />
+              <hr>
               <div class="author card-text">Author: {{recipe.author }}</div>
               <div class="card-date">{{ recipe.created_on|date:"j F, Y" }}</div>
             </div>
