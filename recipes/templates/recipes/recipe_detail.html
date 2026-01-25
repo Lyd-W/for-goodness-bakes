@@ -11,13 +11,13 @@
         src="{{ recipe.image.url }}"
         class="recipe-image"
         alt="{{ recipe.title }}"
-      />
+      >
       {% else %}
       <img
         src="{% static 'images/baking.jpg' %}"
         class="recipe-image"
         alt="Recipe placeholder"
-      />
+      >
       {% endif %}
     </div>
     <div class="recipe-intro col-12 col-lg-8">
@@ -69,7 +69,7 @@
   <div class="comment-count">
     <i class="fa-regular fa-comment"></i> {{ comment_count }}
   </div>
-  <hr />
+  <hr>
 
   <div class="comment-view">
     {% if user.is_authenticated %}
@@ -100,7 +100,7 @@
           <h3 class="username">{{ comment.author }}</h3>
           <time
             class="comment-date"
-            datetime="{{ comment.created_on|date:'c'}}"
+            datetime="{{ comment.created_on|date:'Y-m-d\\TH:i:sP'}}"
           >
             {{ comment.created_on|date:"F j, Y \\a\\t g:i a" }}
           </time>
