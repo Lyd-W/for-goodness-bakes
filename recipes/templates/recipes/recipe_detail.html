@@ -11,13 +11,13 @@
         src="{{ recipe.image.url }}"
         class="recipe-image"
         alt="{{ recipe.title }}"
-      >
+      />
       {% else %}
       <img
         src="{% static 'images/baking.jpg' %}"
         class="recipe-image"
         alt="Recipe placeholder"
-      >
+      />
       {% endif %}
     </div>
     <div class="recipe-intro col-12 col-lg-8">
@@ -69,7 +69,8 @@
   <div class="comment-count">
     <i class="fa-regular fa-comment"></i> {{ comment_count }}
   </div>
-  <hr>
+  <hr />
+
   <div class="comment-view">
     {% if user.is_authenticated %}
     <div class="comment-form">
@@ -84,44 +85,48 @@
         </button>
       </form>
     </div>
-      {% else %}
+    {% else %}
     <div>
       <p>Log in to leave a comment</p>
     </div>
     {% endif %}
-  </div>
-  <hr>
-  <div class="comment-display">
-    <h3 class="comment-title">Comments:</h3>
-    {% for comment in comments %}
-    <article class="comment-card">
-      <header class="comment-data">
-        <h3 class="username">{{ comment.author }}</h3>
-        <time class="comment-date" datetime="{{ comment.created_on}}">
-          {{ comment.created_on }}
-        </time>
-      </header>
-      <div class="comment-content" id="comment{{ comment.id }}">
-        {{ comment.content | linebreaks }}
-      </div>
-      {% if not comment.approved and comment.author == user %}
-      <p class="approval">This comment is awaiting approval</p>
-      {% endif %} {% if user.is_authenticated and comment.author == user %}
-      <button
-        class="button btn-delete comment-button"
-        data-comment-id="{{ comment.id }}"
-      >
-        Delete
-      </button>
-      <button
-        class="button btn-edit comment-button"
-        data-comment-id="{{ comment.id }}"
-      >
-        Edit
-      </button>
-      {% endif %}
-    </article>
-    {% endfor %}
+
+    <hr />
+    <div class="comment-display">
+      <h3 class="comment-title">Comments:</h3>
+      {% for comment in comments %}
+      <article class="comment-card">
+        <header class="comment-data">
+          <h3 class="username">{{ comment.author }}</h3>
+          <time
+            class="comment-date"
+            datetime="{{ comment.created_on|date:'c'}}"
+          >
+            {{ comment.created_on|date:"F j, Y \\a\\t g:i a" }}
+          </time>
+        </header>
+        <div class="comment-content" id="comment{{ comment.id }}">
+          {{ comment.content | linebreaks }}
+        </div>
+        {% if not comment.approved and comment.author == user %}
+        <p class="approval">This comment is awaiting approval</p>
+        {% endif %} {% if user.is_authenticated and comment.author == user %}
+        <button
+          class="button btn-delete comment-button"
+          data-comment-id="{{ comment.id }}"
+        >
+          Delete
+        </button>
+        <button
+          class="button btn-edit comment-button"
+          data-comment-id="{{ comment.id }}"
+        >
+          Edit
+        </button>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
   </div>
 
   <div
