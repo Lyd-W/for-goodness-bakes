@@ -32,6 +32,7 @@ h3 {
 p {
   margin: 0;
   color: var(--text);
+  font-family: Lato, sans-serif;
 }
 
 .button {
@@ -408,6 +409,12 @@ form input {
 
 .about-text {
   margin-top: 1rem;
+  color: var(--text);
+}
+
+.about-content * {
+  font-family: Lato, sans-serif !important;
+  color: var(--text) !important;
 }
 
 .about-meta {
@@ -671,6 +678,7 @@ form input {
   .about-text {
     text-align: left;
     margin-top: 0;
+    font-family: Lato, sans-serif;
   }
 
   .contact-form {
