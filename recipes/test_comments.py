@@ -37,22 +37,22 @@ class TestCommentPermissions(TestCase):
         )
 
     def test_comment_author_can_edit(self):
-            self.client.login(username="User1", password="pass123")
+        self.client.login(username="User1", password="pass123")
 
-            url = reverse(
-                "comment_editing",
-                args=[self.recipe.slug, self.comment.id]
-                )
+        url = reverse(
+            "comment_editing",
+            args=[self.recipe.slug, self.comment.id]
+            )
 
-            response = self.client.post(url, {
-                "content": "Updated comment"
-                })
+        response = self.client.post(url, {
+            "content": "Updated comment"
+            })
 
-            self.comment.refresh_from_db()
+        self.comment.refresh_from_db()
 
-            self.assertEqual(self.comment.content, "Updated comment")
-            self.assertEqual(response.status_code, 302)
-        
+        self.assertEqual(self.comment.content, "Updated comment")
+        self.assertEqual(response.status_code, 302)
+
     def test_comment_author_can_delete(self):
         self.client.login(username="User1", password="pass123")
 
@@ -100,7 +100,7 @@ class TestCommentPermissions(TestCase):
             Comment.objects.filter(id=self.comment.id).exists()
         )
         self.assertEqual(response.status_code, 302)
-      
+
     def test_logged_out_user_cannot_edit_comment(self):
         url = reverse(
             "comment_editing",

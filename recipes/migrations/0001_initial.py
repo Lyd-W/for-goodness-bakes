@@ -17,7 +17,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Recipe',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True,
+                                           serialize=False,
+                                           verbose_name='ID')),
                 ('title', models.CharField(max_length=150, unique=True)),
                 ('slug', models.SlugField(max_length=150, unique=True)),
                 ('image', models.ImageField(upload_to='')),
@@ -28,9 +30,13 @@ class Migration(migrations.Migration):
                 ('cook_time', models.PositiveIntegerField()),
                 ('method', models.TextField()),
                 ('servings', models.PositiveIntegerField()),
-                ('difficulty', models.PositiveIntegerField(choices=[(1, 'Easy'), (2, 'Medium'), (3, 'Hard')])),
-                ('status', models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=0)),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='recipes', to=settings.AUTH_USER_MODEL)),
+                ('difficulty', models.PositiveIntegerField(choices=[
+                    (1, 'Easy'), (2, 'Medium'), (3, 'Hard')])),
+                ('status', models.IntegerField(choices=[
+                    (0, 'Draft'), (1, 'Published')], default=0)),
+                ('author', models.ForeignKey
+                 (on_delete=django.db.models.deletion.CASCADE,
+                  related_name='recipes', to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

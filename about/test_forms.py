@@ -65,5 +65,5 @@ class TestContactForm(TestCase):
     def test_invalid_contact_form_shows_errors(self):
         form_data = {"name": "", "email": "", "message": ""}
         response = self.client.post(reverse("about"), data=form_data)
-        self.assertFormError(response, "contact_form", "name", 
+        self.assertFormError(response, "contact_form", "name",
                              "This field is required.")
