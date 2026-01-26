@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_content");
 const commentForm = document.getElementById("commentForm");
@@ -11,7 +13,7 @@ for (let button of editButtons) {
   button.addEventListener("click", (e) => {
     let commentId = e.target.dataset.commentId;
     let commentContent = document.getElementById(
-      `comment${commentId}`,
+      `comment${commentId}`
     ).innerText;
     let hiddenInput = commentForm.querySelector("input[name='comment_id']");
     if (!hiddenInput) {
