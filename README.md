@@ -98,7 +98,20 @@ These user stories have been prioritied using the MoSCoW Prioritisation method. 
 
 ## User Feedback
 
-User feedback will go here.
+Feedback was gathered informally through family and friends reviewing and testing during development. Users highlighted the clean and welcoming design, ease of navigation, and clarity of recipe information as key strengths.
+
+Positive feedback included:
+- The website is easy to navigate across devices.
+- Recipe pages are clear and well structured.
+- Commenting functionality is intuitive and responsive.
+- The colour palette and typography create a calm, friendly atmosphere.
+
+Suggested improvements included:
+- Adding search or filtering options for recipes.
+- Allowing users to save favourite recipes.
+- Expanding user interaction beyond comments.
+
+These suggestions have been considered and are documented within the Future Enhancements section.
 
 [Back to contents](#contents)
 
@@ -180,11 +193,29 @@ To visualise different colours together [Coolors Scheme](https://coolors.co/2b2b
 
 ### Images
 
-Image information to be added here.
+High-quality food photography is used throughout the website to enhance visual appeal and encourage user engagement. Images were sourced from Unsplash and Pexels, ensuring consistency with the website’s warm and welcoming aesthetic.
+
+All images are optimised for web performance to reduce load times while maintaining visual clarity. Placeholder images are used where necessary to maintain layout consistency and prevent broken image links.
+
+Each recipe includes a featured image to help users quickly identify content and enhance the overall browsing experience.
 
 ### Responsiveness
 
-Responsivness information to be added here.
+A mobile-first approach was taken throughout the design and development process. [Bootstrap](https://getbootstrap.com/docs/5.3/layout/breakpoints/#available-breakpoints "Bootstrap Breakpoints")’s responsive grid system and utility classes were used to ensure the website adapts smoothly across all screen sizes.
+
+The website has been tested on:
+- Mobile devices
+- Tablets (via [Dev Tools](https://developer.chrome.com/docs/devtools "Chrome | Dev Tools"))
+- Desktop and laptop screens
+
+Key responsive features include:
+- Collapsible navigation for smaller screens
+- Scalable images and typography
+- Stacked layouts on mobile that expand into multi-column layouts on larger screens
+
+This ensures a consistent and accessible user experience regardless of device.
+
+![Breakpoints](docs/bootstrap-breakpoints.png "Bootstrap Breakpoints")
 
 [Back to contents](#contents)
 
@@ -192,15 +223,36 @@ Responsivness information to be added here.
 
 ### User Authentication
 
+User authentication is handled using Django’s built-in authentication system. This ensures secure user registration, login, and logout functionality.
 
+Access control is enforced so that:
+- Only authenticated users can create, edit, or delete comments.
+- Users can only modify or delete their own comments.
+- Administrative features are restricted to superusers.
+
+This protects user content and prevents unauthorised access or modification.
 
 ### Password Management
 
+Passwords are securely managed using Django’s password hashing framework. Plain text passwords are never stored.
 
+Additional measures include:
+- Password confirmation during registration
+- Secure password hashing algorithms
+- Automatic protection against common authentication vulnerabilities
+
+This ensures user credentials remain protected at all times.
 
 ### Form Validation
 
+Both client-side and server-side form validation are implemented to ensure data integrity and improve user experience.
 
+Validation includes:
+- Required field enforcement
+- Clear error messages displayed to users
+- Prevention of invalid or empty submissions
+
+Users receive immediate feedback if a form submission fails, helping them correct errors efficiently.
 
 ### Database Security
 
@@ -214,35 +266,85 @@ The production database is not publicly accessible and can only be accessed thro
     
 # Features
 
-Features information to be added here.
+For Goodness Bakes focuses on simplicity, usability, and community interaction. Features are designed to support both casual visitors and registered users while maintaining secure content management.
 
 ## Existing Features
 
 ### Header
 
-Header information to be added here.
+The header provides consistent navigation across the site and adapts responsively to different screen sizes.
+
+Features include:
+- Website branding
+- Navigation links with highlight to indicate current page
+- Authentication-aware options (login/register or logout)
+
+On smaller devices such as mobiles and tablets, the header collapses into a mobile-friendly menu then expands out for clarity on larger screens.
+
+<br>
 
 <b>Mobile header</b>
 
+![Mobile header](docs/mobile-header.jpg "Mobile Header")
+
+<br>
+
+![Mobile header open](docs/mobile-header-open.jpg "Mobile Header Open")
+
+<br>
+
 <b>Tablet header</b>
+
+![Tablet header](docs/tablet-header.png "Tablet Header")
+
+<br>
+
+![Tablet header open](docs/tablet-header-open.png "Tablet Header Open")
+
+<br>
 
 <b>Desktop header</b>
 
+![Laptop header](docs/laptop-header.png "Laptop Header")
+
+<br>
+
 ### Home Section
 
-Home section information to be added here.
+The home page displays a list of available recipes in a clean, visually appealing layout. Each recipe card includes:
+- A featured image
+- Recipe title
+- Short description
+
+Users can click through to individual recipe pages for full details.
+
+<br>
+
+![Home section](docs/home-section.jpg "Home Section")
 
 <br>
 
 ### Registration
 
-Registration information to be added here.
+New users can register for an account using a secure and intuitive form. Upon successful registration, users receive clear feedback and can log in immediately to access commenting features.
 
 <br>
 
-### Login Section
+![Registration feedback](docs/registration-feedback.png "Registration Feedback")
 
-Login section information to be added here.
+<br>
+
+### Login and Logout Sections
+
+Registered users can log in securely using their credentials. Clear confirmation messages are displayed on successful login and logout, improving user confidence and clarity.
+
+<br>
+
+![Login feedback](docs/login-feedback.png "Login Feedback")
+
+<br>
+
+![Logout feedback](docs/logout-feedback.png "Logout Feedback")
 
 <br>
 
