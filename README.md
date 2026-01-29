@@ -31,8 +31,10 @@ A full stack Django web application where users can browse recipes and, once log
         + [Registration](#registration)
         + [Login Section](#login-section)
         + [About Section](#about-section)
+        + [Recipe Detail Section](#recipe-detail-section)
+        + [Comment Section](#comment-section)
         + [Success Page](#success-page)
-        + [404 Error Page](#404-error-page)
+        + [Error Pages](#error-page)
         + [Footer](#footer)
     * [Future Enhancements](#future-enhancements)
 * [Technologies Used](#technologies-used)
@@ -330,13 +332,93 @@ New users can register for an account using a secure and intuitive form. Upon su
 
 <br>
 
+![Registration](docs/registration.png "Registration")
+
+<br>
+
 ![Registration feedback](docs/registration-feedback.png "Registration Feedback")
 
 <br>
 
 ### Login and Logout Sections
 
-Registered users can log in securely using their credentials. Clear confirmation messages are displayed on successful login and logout, improving user confidence and clarity.
+Registered users can log in securely using their credentials, there's the option to remembered log in credentials for quicker access to For Goodness Bakes in the future. Clear confirmation messages are displayed on successful login and logout with a promt before logging out that includes a red hover over effect on the 'Log Out' button, improving user confidence and clarity.
+
+<br>
+
+![Login](docs/login.png "Login")
+
+<br>
+
+![Login credentials](docs/login-credentials.png "Login Credentials")
+
+<br>
+
+![Log out](docs/log-out.png "Log Out")
+
+<br>
+
+![Log out button hover effect](docs/log-out-button.png "Log Out Button Hover Effect")
+
+<br>
+
+### About Section
+
+The About page introduces the purpose of For Goodness Bakes and reinforces the platform’s community-driven values. It provides users with context about the site and encourages engagement with a contact form.
+
+<br>
+
+![About](docs/about.png "About")
+
+<br>
+
+![About contact form](docs/about-contact-form.png "About Contact Form")
+
+<br>
+
+### Recipe Detail
+
+
+
+<br>
+
+![Recipe detail](docs/recipe-detail.png "Recipe Detail")
+
+<br>
+
+### Comment Section
+
+
+
+<br>
+
+![Comment section | logged in](docs/comment-section.png "Comment Section | Logged In")
+
+<br>
+
+![Comment section | logged out](docs/comment-section-logged-out.png "Comment Section | Logged Out")
+
+<br>
+
+![Comment awaiting approval](docs/comment-awaiting-approval.png "Comment Awaiting Approval")
+
+<br>
+
+![Update comment success](docs/update-comment-success.png "Update Comment Success")
+
+<br>
+
+![Delete comment confirmation](docs/delete-comment-confirmation.png "Delete Comment Confirmation")
+
+<br>
+
+![Delete comment success](docs/delete-comment-success.png "Delete Comment Success")
+
+<br>
+
+### Success Page
+
+Success messages are displayed following key user actions such as registration, login, or comment submission. These provide immediate visual confirmation that actions have been completed successfully.
 
 <br>
 
@@ -348,29 +430,59 @@ Registered users can log in securely using their credentials. Clear confirmation
 
 <br>
 
-### About Section
-
-About section information to be added here.
+![Comment success](docs/comment-success.png "Comment Success")
 
 <br>
 
-### Success Page
+### Error Pages
 
-Success page information to be added here.
+Custom 400, 403, 404 and 500 error pages are included to handle broken or invalid URLs. The error page clearly informs users that the requested content cannot be found and provides a link back to the homepage.
 
 <br>
 
-### 404 Error Page
+![400](docs/400.png "400")
 
-Error page information to be added here.
+<br>
+
+![403](docs/403.png "403")
+
+<br>
+
+![404](docs/404.png "404")
+
+<br>
+
+![500](docs/500.png "500")
 
 <br>
 
 ### Footer
 
-Footer information to be added here.
+The footer contains:
+- Copyright information
+- Social media links
+- Consistent branding
+
+It remains accessible across all pages and screen sizes.
+
+<br>
+
+![Footer](docs/footer.png "Footer")
+
+<br>
 
 ## Future Enhancements
+
+Potential future features include:
+- Recipe search and filtering functionality
+- User profiles
+- Ability to save favourite recipes
+- Expanded community interaction features
+- Rating system for recipes
+
+These enhancements would further improve user engagement and scalability.
+
+<br>
 
 [Back to contents](#contents)
 
@@ -516,7 +628,7 @@ The project was deployed to Heroku from VS Code early on, this allowed for more 
 
 #### Images:
 
-All images were sourced from Unsplash and Pexels and are used in accordance with their respective free-use licences. Attribution is provided where recommended.
+All images were sourced from [Unsplash](https://unsplash.com/ "Unsplash | Homepage") and [Pexels](https://www.pexels.com/ "Pexels | Homepage") and are used in accordance with their respective free-use licences. Attribution is provided where recommended. [Squoosh](https://squoosh.app/ "Squoosh | Homepage") was used to resize the images and change file formats to webp and images were stored with [Cloudinary](https://cloudinary.com/ "Cloudinary | Homepage").
 
 - Almond Biscotti [Cook Eat](https://www.pexels.com/photo/sliced-bread-on-green-surface-776859/ "Pexels | Cook Eat")
 - [Favicon.io](https://favicon.io "Favicon.io")
@@ -540,6 +652,13 @@ All images were sourced from Unsplash and Pexels and are used in accordance with
 - Strawberry Victoria Sponge [Becky Fantham](https://unsplash.com/photos/fruit-cake-on-blue-cake-holder-DIUJSBiJNoc "Unsplash | Becky Fantham")
 - Vanilla Blondie [Liana S](https://unsplash.com/photos/a-person-holding-a-piece-of-cake-on-a-wooden-plate-1vsupadWQDI "Unsplash | Liana S")
 - Victoria Sponge [Nick Fewings](https://unsplash.com/photos/brown-bread-on-stainless-steel-plate-9t_v5yHAW-o "Unsplash | Nick Fewings")
+
+<br>
+
+- [Cloudinary](https://cloudinary.com/ "Cloudinary | Homepage")
+- [Squoosh](https://squoosh.app/ "Squoosh | Homepage")
+- [Pexels](https://www.pexels.com/ "Pexels | Homepage")
+- [Unsplash](https://unsplash.com/ "Unsplash | Homepage")
 
 #### Content:
 
