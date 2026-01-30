@@ -7,12 +7,12 @@
 {% block content %}
 
 <section class="log-in-section">
-  <h2 class="login-heading">{% trans "Log In" %}</h2>
+  <h1 class="login-heading">{% trans "Log In" %}</h1>
 
   <p class="login-text">
     {% blocktrans %}Hey there! <br>Please log in to leave comments. <br>If
-    you haven't joined our community yet, please register
-    <a class="link" href="{{ signup_url }}">here</a>. {% endblocktrans %}
+    you haven't joined our community yet, 
+    <a class="link" href="{{ signup_url }}">please register here</a>. {% endblocktrans %}
   </p>
 
   <form class="login" method="POST" action="{% url 'account_login' %}">

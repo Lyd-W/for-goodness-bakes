@@ -36,6 +36,7 @@ A full stack Django web application where users can browse recipes and, once log
         + [Success Page](#success-page)
         + [Error Pages](#error-page)
         + [Footer](#footer)
+        + [Django Admin Panel](#django-admin-panel)
     * [Future Enhancements](#future-enhancements)
 * [Technologies Used](#technologies-used)
     * [Languages](#languages)
@@ -92,7 +93,7 @@ A full stack Django web application where users can browse recipes and, once log
 * As an admin, I want to delete recipes so that outdated or incorrect content can be removed.
 * As an admin, I want to manage user comments so that inappropriate or spam content can be removed.
 
-These user stories have been prioritied using the MoSCoW Prioritisation method. GitHub Project Board was then used to manage workflow and track progress towards completion of each story and ensuring all required elements of the user stories were met.
+These user stories have been prioritised using the MoSCoW Prioritisation method. GitHub Project Board was then used to manage workflow and track progress towards completion of each story and ensuring all required elements of the user stories were met.
 
 ![GitHub Project Board](docs/github-project-board.png)
 
@@ -111,7 +112,7 @@ Positive feedback included:
 Suggested improvements included:
 - Adding search or filtering options for recipes.
 - Allowing users to save favourite recipes.
-- Expanding user interaction beyond comments.
+- Expanding UI beyond comments.
 
 These suggestions have been considered and are documented within the Future Enhancements section.
 
@@ -119,7 +120,7 @@ These suggestions have been considered and are documented within the Future Enha
 
 ## Website Goals
 
-The key website goals are to provide users with a safe community to browse recipe ideas and, when authenticated, engage with the community through posting, editing and deleting their own comments. Administrators will provide this safe community through their abilitiy to moderate user comments and add or amend recipe information. 
+The key website goals are to provide users with a safe community to browse recipe ideas and, when authenticated, engage with the community through posting, editing and deleting their own comments. Administrators will provide this safe community through their ability to moderate user comments and add or amend recipe information. 
 
 [Back to contents](#contents)
 
@@ -130,7 +131,7 @@ The key website goals are to provide users with a safe community to browse recip
 * Enable secure registration for new users, with clear UI confirmation.
 * Enable secure log in/out for existing users, with clear UI confirmation.
 * Ability for only authenticated users to comment on recipes, including editing and deleting thier own comments successfully, with prior prompting before deletion and activity confirmation.
-* All sensitive user and site data is suitably protected, following best practiuce for secure data handling.
+* All sensitive user and site data is suitably protected, following best practice for secure data handling.
 * Allow users with administrative access to manage recipe content and moderate user comments to ensure accuracy, relevance and appropriate for the target audience.
 * Ensure all data input is validated and users are clearly notified of errors in data input. 
 * Inclusion of an error page to direct users back to the homepage if a broken link or error occurs.
@@ -378,7 +379,16 @@ The About page introduces the purpose of For Goodness Bakes and reinforces the p
 
 ### Recipe Detail
 
+Each recipe has its own dedicated detail page, providing comprehensive information for users:
 
+- **Recipe Information:** Displays the title, featured image, ingredients, and step-by-step method.
+- **Additional Details:** Includes preparation time, cooking time, servings and recipe difficulty.
+- **Comment Integration:** Comments related to the recipe are displayed below the content, allowing users to interact directly.
+- **Responsive Layout:** Content and images adapt seamlessly across mobile, tablet, and desktop devices.
+- **Navigation:** Clear buttons and links allow users to return to the home page, browse other recipes, or perform authenticated actions (commenting, editing).
+- **Accessibility:** Semantic HTML and proper contrast ensure readability for all users.
+
+The recipe detail page combines visual appeal with clear structure to provide a smooth and engaging browsing experience.
 
 <br>
 
@@ -388,7 +398,16 @@ The About page introduces the purpose of For Goodness Bakes and reinforces the p
 
 ### Comment Section
 
+Authenticated users can interact with recipes through a fully featured commenting system. Key functionalities include:
 
+- **Create Comments:** Users can add new comments to any recipe, sharing feedback, baking tips, or personal experiences.
+- **Edit Comments:** Users can edit their own comments to correct errors or provide updates. Edited comments update immediately in the UI.
+- **Delete Comments:** Users can delete their own comments. A confirmation prompt ensures accidental deletions are avoided.
+- **Real-Time Feedback:** Actions such as adding, editing, or deleting comments provide immediate visual confirmation with a success message, improving user experience.
+- **Access Control:** Only authenticated users can create, edit, or delete comments. Users cannot modify comments posted by others.
+- **Moderation:** Admin users have the option to authorise comments and can decline and delete inappropriate or irrelevant comments to maintain a positive community environment.
+
+This system encourages UI while maintaining content integrity and community standards.
 
 <br>
 
@@ -471,6 +490,26 @@ It remains accessible across all pages and screen sizes.
 
 <br>
 
+### Django Admin Panel
+
+Administrators have access to a secure, feature-rich admin panel to manage the website and community content:
+
+- **Recipe Management:** Admins can create, edit, and delete recipes, ensuring content remains accurate and up-to-date.
+- **Summernote Editing:** Summernote is integrated into the admin panel to allow text editing for recipe instructions and descriptions. Admins can:
+  - Format text (bold, italics, headings)
+  - Add lists, links, and images
+  - Easily structure content for better readability
+  This ensures recipes are visually appealing and easy to follow for all users.
+- **Comment Moderation:** Admins can view, edit, and delete user comments, accepting, declining and removing inappropriate or spam content.
+- **User Management:** Admins can manage user accounts, including editing user details and assigning admin privileges.
+- **Secure Access:** Admin access is restricted to superusers with Django’s authentication system, preventing unauthorized access.
+- **UI Feedback:** Admin actions provide immediate confirmation messages to ensure administrators are aware of successful updates or deletions.
+- **Database Control:** All changes made in the admin panel directly update the database while maintaining data integrity and security.
+
+This panel ensures that the platform remains safe, well-maintained, and engaging for all users.
+
+<br>
+
 ## Future Enhancements
 
 Potential future features include:
@@ -527,7 +566,9 @@ These enhancements would further improve user engagement and scalability.
 
 ## Responsiveness Tests
 
-Responsiveness tests information to be added here.
+## Responsiveness Tests
+
+Manual testing was conducted across multiple devices and screen sizes both on actual devices and through [Dev Tools](https://developer.chrome.com/docs/devtools "Chrome | Dev Tools") to ensure layout consistency and usability. No significant layout issues were identified.
 
 ## Code Validation
 
@@ -545,7 +586,7 @@ JavaScript information to be added here.
 
 ### Python
 
-Python information to be added here.
+Python code was tested through manual testing, Django error reporting and by running the python code through [Code Institute's](https://pep8ci.herokuapp.com/ "Code Institute | CI Python Linter") Python Linter. The application runs without errors in production, and all core functionality behaves as expected.
 
 ## User Story Testing
 
@@ -565,25 +606,72 @@ Python information to be added here.
 
 ## Feature Testing
 
-Feature testing information to be added here.
+All features were tested to ensure they function correctly for their intended purpose. Authentication, comment CRUD operations, and admin controls were verified.
 
 ## Accessibility Testing
 
-Accessibility testing information to be added here.
+Accessibility best practices were followed, including:
+- Sufficient colour contrast
+- Semantic HTML
+- Clear navigation structure
+
+Contrast Grid and Lighthouse tools were used to support accessibility testing.
 
 ## Lighthouse Testing
 
-Lighthouse testing information to be added here.
+For Goodness Bakes has been tested in [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/inspect-mode "Google Chrome Dev Tools") using the Lighthouse Testing tool to check:
+
+* Performance - this measures the efficiency of the page loading and running.
+* Accessibility - this assesses the usability of the page for all people, especially those with accessibility issues.
+* Best Practices - this checks how the page compares to a set of established web development practices.
+* SEO - this checks for relevance to search engines.
+
+The site majoritively achieved strong scores across all categories with the most scores being 90+. However, the Best Practices category consistently scored 78–79 on the following pages, across desktop and mobile:
+
+•	Home page
+•	About page
+•	Recipe detail pages
+
+The Best Practices score is reduced due to third-party cookies set by Cloudinary’s CDN. These cookies are required for secure and efficient image delivery and cannot be disabled without removing Cloudinary entirely. The application itself follows recommended security and development practices, and no insecure behaviour is introduced by the project code.
+
+[Lighthouse - desktop](docs/lighthouse-desktop.pdf "Lighthouse | Desktop")
+
+[Lighthouse - about desktop](docs/lighthouse-about-desktop.pdf "Lighthouse | About Desktop")
+
+[Lighthouse - recipe detail desktop](docs/lighthouse-recipe-detail-desktop.pdf "Lighthouse | Recipe Detail Desktop")
+
+[Lighthouse - register desktop](docs/lighthouse-register-desktop.pdf "Lighthouse | Register Desktop")
+
+[Lighthouse - login desktop](docs/lighthouse-login-desktop.pdf "Lighthouse | Login Desktop")
+
+[Lighthouse - log out desktop](docs/lighthouse-log-out-desktop.pdf "Lighthouse | Log Out Desktop")
+
+[Lighthouse - mobile](docs/lighthouse-mobile.pdf "Lighthouse | Mobile")
+
+[Lighthouse - about mobile](docs/lighthouse-about-mobile.pdf "Lighthouse | About Mobile")
+
+[Lighthouse - recipe detail mobile](docs/lighthouse-recipe-detail-mobile.pdf "Lighthouse | Recipe Detail Mobile")
+
+[Lighthouse - register mobile](docs/lighthouse-register-mobile.pdf "Lighthouse | Register Mobile")
+
+[Lighthouse - login mobile](docs/lighthouse-login-mobile.pdf "Lighthouse | Login Mobile")
+
+[Lighthouse - log out mobile](docs/lighthouse-log-out-mobile.pdf "Lighthouse | Log Out Mobile")
 
 ## Browser Testing
 
-Browser testing information to be added here.
+The website was tested on:
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+
+No browser-specific issues were identified.
 
 [Back to contents](#contents)
 
 # Deployment
 
-The project was deployed to Heroku from VS Code early on, this allowed for more opportunity to notice errors, as well as to view and test the website at regular intervals. The steps used for deploment were as follows:
+The project was deployed to Heroku from VS Code early on, this allowed for more opportunity to notice errors, as well as to view and test the website at regular intervals. The steps used for deployment were as follows:
 
 ## Step One - Create a New Heroku App
 - Log into Heroku and access your dashboard.
