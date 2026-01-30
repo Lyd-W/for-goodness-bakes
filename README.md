@@ -1,12 +1,13 @@
 # For Goodness Bakes
 
-[For Goodness Bakes](https://for-goodness-bakes-app-93b97c50dd02.herokuapp.com/ "For Goodness Bakes | Heroku")
+Deployed link: [For Goodness Bakes](https://for-goodness-bakes-app-93b97c50dd02.herokuapp.com/ "For Goodness Bakes | Heroku")
 
 A full stack Django web application where users can browse recipes and, once logged in, create, edit, and delete comments on recipes. For Goodness Bakes is a relaxed and friendly community for bakers of all levels to come together for interaction and support from similar minded individuals. The platform focuses on clean UX, accessibility, secure authentication, and robust CRUD functionality.
 
 ![For Goodness Bakes](docs/homepage.png)
 
 ### [Contents](#contents)
+* [Project Rationale](#project-rationale)
 * [User Goals](#user-goals)
 * [User Stories](#user-stories)
 * [User Feedback](#user-feedback)
@@ -42,6 +43,7 @@ A full stack Django web application where users can browse recipes and, once log
     * [Languages](#languages)
     * [Libraries and Frameworks](#libraries-and-frameworks)
     * [Tools and Programmes](#tools-and-programmes)
+* [Database Design and Data Modelling](#database-design-and-data-modelling)
 * [Testing](#testing)
     * [Bugs](#bugs)
     * [Responsiveness Tests](#responsiveness-tests)
@@ -56,6 +58,20 @@ A full stack Django web application where users can browse recipes and, once log
     * [Browser Testing](#browser-testing)
 * [Deployment](#deployment)
 * [Credits](#credits)
+
+## Project Rationale
+
+Many existing recipe websites prioritise monetisation through advertisements, pop-ups, autoplay media, and external links. While this approach may generate revenue, it often results in busy, distracting interfaces that interrupt the user’s focus and negatively impact the overall user experience. For users seeking a calm, supportive environment to explore recipes and share baking experiences, these platforms can feel overwhelming and impersonal.
+
+Additionally, although many recipe platforms include social features such as likes or ratings, these mechanisms can discourage meaningful interaction. Users may become overly focused on numerical validation rather than genuine discussion, which can lead to comparison, reduced participation, or reluctance to engage. Comment sections, when thoughtfully designed, encourage richer interaction by allowing users to share advice, ask questions, and offer support in a more conversational and human way.
+
+For Goodness Bakes was created to address these issues by providing a clean, distraction-free recipe platform centred around community interaction rather than popularity metrics. The application intentionally avoids advertisements and intrusive UI elements, allowing users to focus on content and engagement without interruption. Interaction is facilitated through moderated comment functionality rather than likes or ratings, promoting thoughtful discussion and reducing pressure associated with public metrics.
+
+Moderation plays a key role in maintaining a positive and welcoming environment. By implementing an approval system for comments and restricting editing and deletion to the original author or administrators, the platform supports respectful interaction while protecting users from spam or inappropriate content. This approach reflects real-world community management practices and demonstrates the importance of backend logic in enforcing frontend behaviour and user permissions.
+
+The project targets home bakers and food enthusiasts seeking a friendly, supportive space to share experiences and improve their skills. Django was selected as the framework for this application due to its robust authentication system, strong support for relational data modelling, and built-in security features. These capabilities allow for clear separation of concerns between models, views, and templates, ensuring maintainable code, secure data handling, and a seamless connection between backend logic and frontend presentation.
+
+[Back to contents](#contents)
 
 ## User Goals
 
@@ -186,17 +202,17 @@ To visualise different colours together [Coolors Scheme](https://coolors.co/2b2b
 |CSS Name               |HEX          |Use
 |-----------------------|-------------|------------------------------------------------|
 | --primary | #FAF7F2 | Website background colour |
-| --secondary | #E8B7C8 | Buttons, links, navigation  |
-| --primary-highlight | #C97A5D | Button hover and borders, submission button |
-| --secondary-highlight | #A8C3B1 | Secondary buttons, success messages |
+| --secondary | #E8B7C8 | Log in status text  |
+| --primary-highlight | #C97A5D | Button hover and borders |
+| --secondary-highlight | #A8C3B1 | Current page indicator, success messages |
 | --text | #2B2B2B | Primary text colour |
-| --danger | #E8B7C8 | Danger buttons (delete, log out) |
+| --danger | #FF0000 | Danger buttons (delete, log out) |
 | --success | #A8C3B1 | Success button (send, submit) |
 
 
 ### Images
 
-High-quality food photography is used throughout the website to enhance visual appeal and encourage user engagement. Images were sourced from Unsplash and Pexels, ensuring consistency with the website’s warm and welcoming aesthetic.
+High-quality food photography is used throughout the website to enhance visual appeal and encourage user engagement. Images were sourced from [Unsplash](https://unsplash.com/ "Unsplash | Homepage") and [Pexels](https://www.pexels.com/ "Pexels | Homepage"), ensuring consistency with the website’s warm and welcoming aesthetic.
 
 All images are optimised for web performance to reduce load times while maintaining visual clarity. Placeholder images are used where necessary to maintain layout consistency and prevent broken image links.
 
@@ -557,6 +573,43 @@ These enhancements would further improve user engagement and scalability.
 
 [Back to contents](#contents)
 
+# Database Design and Data Modelling
+
+The database for For Goodness Bakes has been designed to support a secure, responsive, and interactive recipe community. A relational database model was chosen to ensure data consistency, enforce relationships, and support CRUD operations efficiently.
+
+## Data Model 
+
+The application contains the following primary entities:
+- User – Stores registered user accounts, including authentication credentials, roles (regular user or admin), and profile-related information.
+- Recipe – Represents each recipe, including title, description, ingredients, method, preparation and cooking times, servings, difficulty level, and featured image.
+- Comment – Represents user comments on recipes. Each comment is linked to both a recipe and a user. Comments include content, timestamps, and status (approved, pending moderation).
+
+## Entity Relationship
+
+The data model follows a relational structure, ensuring clear and enforceable relationships:
+
+- A User can create multiple Comments (1-to-many).
+- A Recipe can have multiple Comments (1-to-many).
+- Each Comment is associated with exactly one User and one Recipe (1-to-1).
+- Admin users have elevated permissions, but no separate table is required as roles are stored in the User entity.
+
+These relationships maintain data integrity, prevent orphaned records, and allow efficient retrieval of information such as “all comments for a recipe” or “all recipes commented on by a user.”
+
+## Entity Relationship Diagram (ERD)
+
+The ERD shows how the main pieces of the app fit together and how they relate to each other.
+
+Some key things to notice:
+- Each entity has a primary key (User.id, Recipe.id, Comment.id) to keep everything unique.
+- Foreign keys make sure the relationships are correct, for example, every comment points to a specific user and a specific recipe (Comment.user_id → User.id, Comment.recipe_id → Recipe.id).
+- Data types and constraints are set up to make sure all the information is stored properly and stays consistent.
+
+The ERD gives a clear overview of how users, recipes, and comments all connect in the database.
+
+[ERD](docs/erd.pdf "ERD")
+
+[Back to contents](#contents)
+
 # Testing
 
 ## Bugs
@@ -628,9 +681,9 @@ For Goodness Bakes has been tested in [Google Chrome Dev Tools](https://develope
 
 The site majoritively achieved strong scores across all categories with the most scores being 90+. However, the Best Practices category consistently scored 78–79 on the following pages, across desktop and mobile:
 
-•	Home page
-•	About page
-•	Recipe detail pages
+- Home page
+- About page
+- Recipe detail pages
 
 The Best Practices score is reduced due to third-party cookies set by Cloudinary’s CDN. These cookies are required for secure and efficient image delivery and cannot be disabled without removing Cloudinary entirely. The application itself follows recommended security and development practices, and no insecure behaviour is introduced by the project code.
 
