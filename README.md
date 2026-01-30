@@ -44,6 +44,9 @@ A full stack Django web application where users can browse recipes and, once log
     * [Libraries and Frameworks](#libraries-and-frameworks)
     * [Tools and Programmes](#tools-and-programmes)
 * [Database Design and Data Modelling](#database-design-and-data-modelling)
+    * [Date Model](#data-model)
+    * [Entity Relationship](#entity-relationship)
+    * [Entity Relationship Diagram](#entity-relationship-diagram)
 * [Testing](#testing)
     * [Bugs](#bugs)
     * [Responsiveness Tests](#responsiveness-tests)
@@ -595,9 +598,9 @@ The data model follows a relational structure, ensuring clear and enforceable re
 
 These relationships maintain data integrity, prevent orphaned records, and allow efficient retrieval of information such as “all comments for a recipe” or “all recipes commented on by a user.”
 
-## Entity Relationship Diagram (ERD)
+## Entity Relationship Diagram
 
-The ERD shows how the main pieces of the app fit together and how they relate to each other.
+The Entity Relationship Diagram (ERD) shows how the main pieces of the app fit together and how they relate to each other.
 
 Some key things to notice:
 - Each entity has a primary key (User.id, Recipe.id, Comment.id) to keep everything unique.
