@@ -27,6 +27,7 @@ A full stack Django web application where users can browse recipes and, once log
     + [Database Security](#database-security)
 * [Features](#features)
     * [Existing Features](#existing-features)
+        + [Favicon](#favicon)
         + [Header](#header)
         + [Home Section](#home-section)
         + [Registration](#registration)
@@ -292,14 +293,25 @@ For Goodness Bakes focuses on simplicity, usability, and community interaction. 
 
 ## Existing Features
 
+### Favicon
+
+Due to the nature of For Goodness Bakes, a cupcake favicon was chosen from [Favicon](https://favicon.io/emoji-favicons/ "Favicon | Homepage") as it creates a quick visual indicator of what the website is about, whilst remaining fun and relaxed due to the cartoon style of the icon. 
+
+![Favicon](docs/favicon.png "Favicon")
+
+<br>
+
 ### Header
 
 The header provides consistent navigation across the site and adapts responsively to different screen sizes.
 
 Features include:
 - Website branding
-- Navigation links with highlight to indicate current page
+- Website slogan 'Let's get baking'
+- Navigation links with highlight to indicate current page in ash grey
 - Authentication-aware options (login/register or logout)
+- Log in status in soft blossom to highlight whether a user is logged in and the current user's username. When a user is not logged in, an encouraging message of 'Log in to get baking!' is displayed.
+- Highlight hover effect in burnt peach
 
 On smaller devices such as mobiles and tablets, the header collapses into a mobile-friendly menu then expands out for clarity on larger screens.
 
@@ -307,27 +319,25 @@ On smaller devices such as mobiles and tablets, the header collapses into a mobi
 
 <b>Mobile header</b>
 
-![Mobile header](docs/mobile-header.jpg "Mobile Header")
+[Mobile header](docs/mobile-header.jpg "Mobile Header")
 
-<br>
-
-![Mobile header open](docs/mobile-header-open.jpg "Mobile Header Open")
+[Mobile header open](docs/mobile-header-open.jpg "Mobile Header Open")
 
 <br>
 
 <b>Tablet header</b>
 
-![Tablet header](docs/tablet-header.png "Tablet Header")
+[Tablet header](docs/tablet-header.png "Tablet Header")
 
-<br>
-
-![Tablet header open](docs/tablet-header-open.png "Tablet Header Open")
+[Tablet header open](docs/tablet-header-open.png "Tablet Header Open")
 
 <br>
 
 <b>Desktop header</b>
 
-![Laptop header](docs/laptop-header.png "Laptop Header")
+[Laptop header](docs/laptop-header.png "Laptop Header")
+
+[Laptop header with hover effect](docs/laptop-header-hover.png "Laptop Header Hover Effect")
 
 <br>
 
@@ -338,53 +348,68 @@ The home page displays a list of available recipes in a clean, visually appealin
 - Recipe title
 - Short description
 
-Users can click through to individual recipe pages for full details.
+On larger screens, when the user hovers over a recipe, the recipe card moves slighlty to provide a better user experience. Users can click through to individual recipe pages for full details. 
 
 <br>
 
-![Home section](docs/home-section.jpg "Home Section")
+[Desktop home view](docs/desktop-home-view.png "Desktop Home View")
+
+[Desktop home view with hover effect](docs/desktop-home-view-hover.png "Desktop Home View With Hover Effect")
+
+[Tablet home view](docs/tablet-home-view.png "Tablet Home View")
+
+[Mobile home portrait view](docs/mobile-home-portrait-view.png "Mobile Home Portrait View")
+
+[Mobile home landscape view](docs/mobile-home-landscape-view.png "Mobile Home Landscape View")
 
 <br>
 
 ### Registration
 
-New users can register for an account using a secure and intuitive form. Upon successful registration, users receive clear feedback and can log in immediately to access commenting features.
+New users can register for an account using a secure and intuitive form. There is a link to the log in page incase a user has incorrectly navigated to the registration page. The registration form gives validation feedback to users if they try to submit the form with an empty field that is required and offers password requirements. 
+
+Upon successful registration, users receive clear feedback and are logged in immediately to access commenting features.
 
 <br>
 
-![Registration](docs/registration.png "Registration")
+[Registration](docs/registration.png "Registration")
 
-<br>
+[Registration validation](docs/registration-validation.png "Registration Validation")
 
-![Registration feedback](docs/registration-feedback.png "Registration Feedback")
+[Registration feedback](docs/registration-feedback.png "Registration Feedback")
 
 <br>
 
 ### Login and Logout Sections
 
-Registered users can log in securely using their credentials, there's the option to remembered log in credentials for quicker access to For Goodness Bakes in the future. Clear confirmation messages are displayed on successful login and logout with a promt before logging out that includes a red hover over effect on the 'Log Out' button, improving user confidence and clarity.
+Registered users can log in securely using their credentials, there's the option to remember log in credentials for quicker access to For Goodness Bakes in the future, providing a better user experience. Incase a new user has incorrectly navigated to the log in page when they do not currently have an account, there is a link to the register page. Clear confirmation messages are displayed on successful login and logout with a prompt before logging out that includes a red hover over effect on the 'Log Out' button, improving user confidence and clarity.
 
 <br>
 
-![Login](docs/login.png "Login")
+[Login](docs/login.png "Login")
 
-<br>
+[Login credentials](docs/login-credentials.png "Login Credentials")
 
-![Login credentials](docs/login-credentials.png "Login Credentials")
+[Log out](docs/log-out.png "Log Out")
 
-<br>
-
-![Log out](docs/log-out.png "Log Out")
-
-<br>
-
-![Log out button hover effect](docs/log-out-button.png "Log Out Button Hover Effect")
+[Log out button hover effect](docs/log-out-button.png "Log Out Button Hover Effect")
 
 <br>
 
 ### About Section
 
-The About page introduces the purpose of For Goodness Bakes and reinforces the platform’s community-driven values. It provides users with context about the site and encourages engagement with a contact form.
+The About page introduces the purpose of For Goodness Bakes and reinforces the platform’s community-driven values. It provides users with context about the site and encourages engagement with a contact form. Keeping to the relaxed and friendly atmosphere, the contact form reads 
+'Got a craving you wish to satisfy or a favourite recipe to share?
+Contact us using the form below.'
+
+The About page includes:
+- A featured image
+- A description about For Goodness Bakes that can be modified by administrators
+- Time and date stamp of when the description was last updated
+- 'Get in touch' contact form
+- Form 'Send' button has ash grey highlight which is a green tone suggesting success
+- Form validation
+- Success message
 
 <br>
 
@@ -812,5 +837,6 @@ All images were sourced from [Unsplash](https://unsplash.com/ "Unsplash | Homepa
 
 - [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FAF7F2%0D%0A%23E8B7C8%0D%0A%23C97A5D%0D%0A%23A8C3B1%0D%0A%232B2B2B&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid")
 - [Coolors Scheme](https://coolors.co/ "Coolors Scheme Homepage")
+- [Favicon](https://favicon.io/emoji-favicons/ "Favicon | Homepage")
 
 [Back to contents](#contents)
