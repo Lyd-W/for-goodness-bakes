@@ -295,7 +295,10 @@ For Goodness Bakes focuses on simplicity, usability, and community interaction. 
 
 ### Favicon
 
-Due to the nature of For Goodness Bakes, a cupcake favicon was chosen from [Favicon](https://favicon.io/emoji-favicons/ "Favicon | Homepage") as it creates a quick visual indicator of what the website is about, whilst remaining fun and relaxed due to the cartoon style of the icon. 
+Due to the nature of For Goodness Bakes, a cupcake favicon was chosen from [Favicon](https://favicon.io/emoji-favicons/ "Favicon | Homepage") as it creates a quick visual indicator of what the website is about, whilst remaining fun and relaxed due to the cartoon style of the icon.
+
+Key features include:
+- Fun, cupcake favicon
 
 ![Favicon](docs/favicon.png "Favicon")
 
@@ -305,13 +308,14 @@ Due to the nature of For Goodness Bakes, a cupcake favicon was chosen from [Favi
 
 The header provides consistent navigation across the site and adapts responsively to different screen sizes.
 
-Features include:
+Key features include:
 - Website branding
 - Website slogan 'Let's get baking'
 - Navigation links with highlight to indicate current page in ash grey
 - Authentication-aware options (login/register or logout)
 - Log in status in soft blossom to highlight whether a user is logged in and the current user's username. When a user is not logged in, an encouraging message of 'Log in to get baking!' is displayed.
 - Highlight hover effect in burnt peach
+- Responsive across screen sizes
 
 On smaller devices such as mobiles and tablets, the header collapses into a mobile-friendly menu then expands out for clarity on larger screens.
 
@@ -343,7 +347,15 @@ On smaller devices such as mobiles and tablets, the header collapses into a mobi
 
 ### Home Section
 
-The home page displays a list of available recipes in a clean, visually appealing layout. Each recipe card includes:
+The home page displays a list of available recipes in a clean, visually appealing layout. 
+
+Key features include:
+- List of recipes displayed as cards
+- Cards are resonsive when hovered over on larger screens
+- Responsive on different screen sizes
+- 'next' and 'prev' page buttons at the bottom of the page with hover effect in burnt peach
+
+Each recipe card includes:
 - A featured image
 - Recipe title
 - Short description
@@ -370,9 +382,21 @@ New users can register for an account using a secure and intuitive form. There i
 
 Upon successful registration, users receive clear feedback and are logged in immediately to access commenting features.
 
+Key features include:
+- User friendly form
+- Link to log in page
+- Form validation
+- Password requirements
+- Optional email address field
+- Register button with hover effect in burnt peach
+
 <br>
 
-[Registration](docs/registration.png "Registration")
+[Registration preview for desktop](docs/registration.png "Registration Preview | Desktop")
+
+[Registration preview for tablet](docs/registration-tablet.png "Registration Preview | Tablet")
+
+[Registration preview for mobile](docs/registration-mobile.png "Registration Preview | Mobile")
 
 [Registration validation](docs/registration-validation.png "Registration Validation")
 
@@ -384,15 +408,38 @@ Upon successful registration, users receive clear feedback and are logged in imm
 
 Registered users can log in securely using their credentials, there's the option to remember log in credentials for quicker access to For Goodness Bakes in the future, providing a better user experience. Incase a new user has incorrectly navigated to the log in page when they do not currently have an account, there is a link to the register page. Clear confirmation messages are displayed on successful login and logout with a prompt before logging out that includes a red hover over effect on the 'Log Out' button, improving user confidence and clarity.
 
+Once a user has logged in, the header updates to welcome the user by username and adjusts to the navigation to the relevant options.
+
+Key features include:
+- Option to remember login credentials
+- Link to registration page
+- 'Log In' button with hover effect in burnt peach
+- Friendly welcome message on log in page
+- Adjusted navigation for logged in or logged out users
+- Confirmation log out page
+- 'Log Out' button with hover effect in danger
+
 <br>
 
-[Login](docs/login.png "Login")
+[Login preview for desktop](docs/login-desktop.png "Login | Desktop")
+
+[Login preview for tablet](docs/login-tablet.png "Login | Tablet")
+
+[Login preview for mobile](docs/login-mobile.png "Login | Mobile")
 
 [Login credentials](docs/login-credentials.png "Login Credentials")
 
-[Log out](docs/log-out.png "Log Out")
+[Log out preview for desktop](docs/log-out-desktop.png "Log Out | Desktop")
 
-[Log out button hover effect](docs/log-out-button.png "Log Out Button Hover Effect")
+[Log out preview for tablet](docs/log-out-tablet.png "Log Out | Tablet")
+
+[Log out preview for mobile](docs/log-out-mobile.png "Log Out | Mobile")
+
+[Log out button hover effect preview](docs/log-out-button.png "Log Out Button Hover Effect")
+
+[Logged in user's header display preview](docs/logged-in-user-display.png "Logged In Header Display")
+
+[Logged out user's header display preview](docs/logged-out-user-display.png "Logged Out Header Display")
 
 <br>
 
@@ -402,12 +449,12 @@ The About page introduces the purpose of For Goodness Bakes and reinforces the p
 'Got a craving you wish to satisfy or a favourite recipe to share?
 Contact us using the form below.'
 
-The About page includes:
+Key features include:
 - A featured image
 - A description about For Goodness Bakes that can be modified by administrators
 - Time and date stamp of when the description was last updated
 - 'Get in touch' contact form
-- Form 'Send' button has ash grey highlight which is a green tone suggesting success
+- Form 'Send' button has ash grey hover effect which is a green tone suggesting success
 - Form validation
 - Success message
 
@@ -415,9 +462,9 @@ The About page includes:
 
 ![About](docs/about.png "About")
 
-<br>
-
 ![About contact form](docs/about-contact-form.png "About Contact Form")
+
+![About contact form validation](docs/about-contact-form-validation.png "About Contact Form Validation")
 
 <br>
 
