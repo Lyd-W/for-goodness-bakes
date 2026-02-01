@@ -742,8 +742,12 @@ The ERD gives a clear overview of how users, recipes, and comments all connect i
 
 |   Bug Description                         | Resolved |    Resolution Description                               |
 |-------------------------------------------|----------|---------------------------------------------------------|
-
-## Responsiveness Tests
+|Server Error occuring only on Heroku deployment.|Yes|Add Cloudinary_URL to config vars on Heroku.|
+|Comment form not submitting on button click|Yes|Amend typo from comment-on to comment_on|
+|Logged in users unable to see comments awaiting moderation.|Yes|Amend comment filtering from approved=true to all.|
+|Blue outline around social links|Yes|Update CSS to remove text decoration.|
+|When a comment is editted, the original uneditted comment remains and a new editted version is posted.|Yes|Update Javascript in comments.js to check for hidden input of comment_id of post being editted and set value to the comment's id from the database. This prevents duplicate comments being made when edits are completed.|
+|Error page button styling not taking effect.|Yes|Set Debug to True to view styling. Once completed, update static files and reset Debug to False.|
 
 ## Responsiveness Tests
 
