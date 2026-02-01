@@ -151,7 +151,7 @@ The key website goals are to provide users with a safe community to browse recip
 * To provide intuitive navigation onto individual recipe pages from the recipe listing page, keeping the layout consistent with clear information and easily accessible navigation controls.
 * Enable secure registration for new users, with clear UI confirmation.
 * Enable secure log in/out for existing users, with clear UI confirmation.
-* Ability for only authenticated users to comment on recipes, including editing and deleting thier own comments successfully, with prior prompting before deletion and activity confirmation.
+* Ability for only authenticated users to comment on recipes, including editing and deleting their own comments successfully, with prior prompting before deletion and activity confirmation.
 * All sensitive user and site data is suitably protected, following best practice for secure data handling.
 * Allow users with administrative access to manage recipe content and moderate user comments to ensure accuracy, relevance and appropriate for the target audience.
 * Ensure all data input is validated and users are clearly notified of errors in data input. 
@@ -322,27 +322,17 @@ On smaller devices such as mobiles and tablets, the header collapses into a mobi
 
 <br>
 
-<b>Mobile header</b>
+[Desktop header](docs/laptop-header.png "Desktop Header")
 
-[Mobile header](docs/mobile-header.jpg "Mobile Header")
-
-[Mobile header open](docs/mobile-header-open.jpg "Mobile Header Open")
-
-<br>
-
-<b>Tablet header</b>
+[Desktop header with hover effect](docs/laptop-header-hover.png "Desktop Header Hover Effect")
 
 [Tablet header](docs/tablet-header.png "Tablet Header")
 
 [Tablet header open](docs/tablet-header-open.png "Tablet Header Open")
 
-<br>
+[Mobile header](docs/mobile-header.jpg "Mobile Header")
 
-<b>Desktop header</b>
-
-[Laptop header](docs/laptop-header.png "Laptop Header")
-
-[Laptop header with hover effect](docs/laptop-header-hover.png "Laptop Header Hover Effect")
+[Mobile header open](docs/mobile-header-open.jpg "Mobile Header Open")
 
 <br>
 
@@ -365,15 +355,15 @@ On larger screens, when the user hovers over a recipe, the recipe card moves sli
 
 <br>
 
-[Desktop home view](docs/desktop-home-view.png "Desktop Home View")
+[Desktop home view preview](docs/desktop-home-view.png "Desktop Home View Preview")
 
 [Desktop home view with hover effect](docs/desktop-home-view-hover.png "Desktop Home View With Hover Effect")
 
-[Tablet home view](docs/tablet-home-view.png "Tablet Home View")
+[Tablet home view preview](docs/tablet-home-view.png "Tablet Home View Preview")
 
-[Mobile home portrait view](docs/mobile-home-portrait-view.png "Mobile Home Portrait View")
+[Mobile home portrait view preview](docs/mobile-home-portrait-view.png "Mobile Home Portrait View Preview")
 
-[Mobile home landscape view](docs/mobile-home-landscape-view.png "Mobile Home Landscape View")
+[Mobile home landscape view preview](docs/mobile-home-landscape-view.png "Mobile Home Landscape View Preview")
 
 <br>
 
@@ -620,6 +610,7 @@ Administrators have access to a secure, feature-rich admin panel to manage the w
 - Secure Access: Admin access is restricted to superusers with Django’s authentication system, preventing unauthorized access.
 - UI Feedback: Admin actions provide immediate confirmation messages to ensure administrators are aware of successful updates or deletions.
 - Database Control: All changes made in the admin panel directly update the database while maintaining data integrity and security.
+- User passwords are always stored securely using a hashing algorithm to offer high levels of protection.
 
 This panel ensures that the platform remains safe, well-maintained, and engaging for all users.
 
@@ -647,6 +638,8 @@ This panel ensures that the platform remains safe, well-maintained, and engaging
 
 [Django administration change comments preview](docs/django-administration-change-comment.png "Django Administration | Change Comments")
 
+[Django administration add user success message preview](docs/django-administration-add-user-success.png "Django Administration | Add User Success Message")
+
 <br>
 
 ## Future Enhancements
@@ -659,6 +652,7 @@ Potential future features include:
 - Rating system for recipes
 - Dark mode
 - Character limit for comments
+- Update language to ensure consistency 
 
 These enhancements would further improve user engagement and scalability.
 
@@ -678,7 +672,7 @@ These enhancements would further improve user engagement and scalability.
 
 ## Libraries and Frameworks
 
-- [Bootstrap v5.3](https://getbootstrap.com/ "Bootstrap v5.3 Homepage")
+- [Bootstrap v5.3.8](https://getbootstrap.com/ "Bootstrap v5.3 Homepage")
 - [Django](https://www.djangoproject.com/ "Django Homepage")
 - [Favicon](https://favicon.io/ "Favicon Homepage")
 - [Font Awesome](https://fontawesome.com/search?q=menu&o=r&ic=free "Font Awesome Homepage")
@@ -686,16 +680,20 @@ These enhancements would further improve user engagement and scalability.
 
 ## Tools and Programmes
 
+- [Black](https://pypi.org/project/black/ "Black | Code Formatter")
 - [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FAF7F2%0D%0A%23E8B7C8%0D%0A%23C97A5D%0D%0A%23A8C3B1%0D%0A%232B2B2B&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid")
 - [Coolors](http://https://coolors.co/ "Coolors")
+- [Digital Colour Meter](https://support.apple.com/en-gb/guide/digital-color-meter/welcome/mac "Apple | Digital Colour Meter")
 - [Draw.io](https://www.drawio.com/ "Draw.io Homepage")
 - [GitHub](https://github.com "GitHub Homepage")
 - [Heroku](https://www.heroku.com/ "Heroku")
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode "Prettier - Code Formatter")
+- [HTML Color Codes](https://htmlcolorcodes.com/ "HTML Color Codes | Homepage")
+- [JSHint](https://jshint.com/ "JSHint | Homepage")
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode "Prettier | Code Formatter")
 - [VS Code](https://code.visualstudio.com/ "VS Code Homepage")
 - [WAVE](https://wave.webaim.org/report#/https://for-goodness-bakes-app-93b97c50dd02.herokuapp.com/ "WAVE | Homepage")
-- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation Service Homepage")
-- [W3C HTML Validation Service](https://validator.w3.org/#validate_by_uri "W3C HTML Validation Service Homepage")
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS Validation Service Homepage")
+- [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML Validation Service Homepage")
 
 [Back to contents](#contents)
 
@@ -742,11 +740,11 @@ The ERD gives a clear overview of how users, recipes, and comments all connect i
 
 |   Bug Description                         | Resolved |    Resolution Description                               |
 |-------------------------------------------|----------|---------------------------------------------------------|
-|Server Error occuring only on Heroku deployment.|Yes|Add Cloudinary_URL to config vars on Heroku.|
+|Server Error occurring only on Heroku deployment.|Yes|Add Cloudinary_URL to config vars on Heroku.|
 |Comment form not submitting on button click|Yes|Amend typo from comment-on to comment_on|
 |Logged in users unable to see comments awaiting moderation.|Yes|Amend comment filtering from approved=true to all.|
 |Blue outline around social links|Yes|Update CSS to remove text decoration.|
-|When a comment is editted, the original uneditted comment remains and a new editted version is posted.|Yes|Update Javascript in comments.js to check for hidden input of comment_id of post being editted and set value to the comment's id from the database. This prevents duplicate comments being made when edits are completed.|
+|When a comment is edited, the original unedited comment remains and a new edited version is posted.|Yes|Update Javascript in comments.js to check for hidden input of comment_id of post being edited and set value to the comment's id from the database. This prevents duplicate comments being made when edits are completed.|
 |Error page button styling not taking effect.|Yes|Set Debug to True to view styling. Once completed, update static files and reset Debug to False.|
 
 ## Responsiveness Tests
@@ -757,19 +755,51 @@ Manual testing was conducted across multiple devices and screen sizes both on ac
 
 ### HTML
 
-HTML information to be added here.
+[W3C HTML Validator](https://validator.w3.org/ "W3C HTML Validator | Home") was used to check all of the HTML on the For Goodness Bakes website with no errors or warnings found.
+
+[W3C HTML Validator - home page results](docs/html-checker-home.png "W3C HTML Validator | Home Page Results")
+
+[W3C HTML Validator - recipe detail page results](docs/html-checker-recipe-detail.png "W3C HTML Validator | Recipe Detail Page Results")
+
+[W3C HTML Validator - about page results](docs/html-checker-home.png "W3C HTML Validator | About Page Results")
+
+[W3C HTML Validator - register page results](docs/html-checker-signup.png "W3C HTML Validator | Register Page Results")
+
+[W3C HTML Validator - login page results](docs/html-checker-login.png "W3C HTML Validator | Login Page Results")
+
+[W3C HTML Validator - logout page results](docs/html-checker-logout.png "W3C HTML Validator | Logout Page Results")
 
 ### CSS
 
-CSS information to be added here.
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/ "W3C CSS Validator | Home") was used to validate the CSS on the For Goodness Bakes website with no errors found.
+
+[W3C CSS Validator results](docs/css-validator.png "W3C CSS Validator")
 
 ### JavaScript
 
-JavaScript information to be added here.
+[JSHint](https://jshint.com/ "JSHint | Homepage") was used to analyse the JavaScript used in the For Goodness Bakes website, no errors were found.
+
+[JSHint Analyse results](docs/jshint-analyse.png "JSHint Analyse Results")
 
 ### Python
 
-Python code was tested through manual testing, Django error reporting and by running the python code through [Code Institute's](https://pep8ci.herokuapp.com/ "Code Institute | CI Python Linter") Python Linter. The application runs without errors in production, and all core functionality behaves as expected.
+Python code was tested through manual testing, Django error reporting and by running the python code through [Code Institute's](https://pep8ci.herokuapp.com/ "Code Institute | CI Python Linter") Python Linter. The application runs without errors in production, and all core functionality behaves as expected. CI's Python Linter returned no errors on all python code, the key tests can be found below:
+
+[CI Python Linter test for recipe.views.py](docs/python-testing-recipes-views-py.png "CI Python Linter | recipe.views.py")
+
+[CI Python Linter test for about.views.py](docs/python-testing-about-views-py.png "CI Python Linter | about.views.py")
+
+[CI Python Linter test for for_goodness_bakes-settings.py](docs/python-testing-for-goodness-bakes-settings-py.png "CI Python Linter | or_goodness_bakes-settings.py")
+
+[CI Python Linter test for recipe.admin.py](docs/python-testing-recipes-admin-py.png "CI Python Linter | recipe.admin.py")
+
+[CI Python Linter test for recipe.forms.py](docs/python-testing-recipes-forms-py.png "CI Python Linter | recipe.forms.py")
+
+[CI Python Linter test for recipe.models.py](docs/python-testing-recipes-models-py.png "CI Python Linter | recipe.models.py")
+
+[CI Python Linter test for about.forms.py](docs/python-testing-about-forms-py.png "CI Python Linter | about.forms.py")
+
+[CI Python Linter test for about.models.py](docs/python-testing-about-models-py.png "CI Python Linter | about.models.py")
 
 ## User Story Testing
 
@@ -936,7 +966,7 @@ The project was deployed to Heroku from VS Code early on, this allowed for more 
 | SECRET_KEY | Enter a random secret key, this can be randomly generated using a website such as [Djecrety](https://djecrety.ir/ "Djecrety").
 
 ## Step Three - Prepare the Project for Deployment in the IDE
-- Create a **'requirements.txt'** file to list all of the dependancies required by your project. This can be done by running **'pip3 install -r requirements.txt'** in the terminal, it can then be updated to include any other packages installed by running **'pip3 freeze --local > requirements.txt'** in the terminal.
+- Create a **'requirements.txt'** file to list all of the dependencies required by your project. This can be done by running **'pip3 install -r requirements.txt'** in the terminal, it can then be updated to include any other packages installed by running **'pip3 freeze --local > requirements.txt'** in the terminal.
 - Install **'gunicorn'** using the command **'pip3 install gunicorn~=20.1'** in the terminal and update **'requirements.txt'**.
 - Create a **'Procfile'** in the root directory of the project, add the following line of code to the Procfile **'web: gunicorn project_name.wsgi'**. Ensure project_name matches the project's name.
 - Update the **'ALLOWED_HOSTS'** list in **'settings.py'** to include **'.herokuapp.com',**. 

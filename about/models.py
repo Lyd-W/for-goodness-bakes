@@ -6,7 +6,7 @@ STATUS = (
     (0, "Draft"),
     (1, "Published"),
 )
-
+p
 
 class About(models.Model):
     title = models.CharField(max_length=150, unique=True)
