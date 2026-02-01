@@ -35,7 +35,7 @@ A full stack Django web application where users can browse recipes and, once log
         + [About Section](#about-section)
         + [Recipe Detail Section](#recipe-detail-section)
         + [Comment Section](#comment-section)
-        + [Success Page](#success-page)
+        + [Success Messages](#success-messages)
         + [Error Pages](#error-page)
         + [Footer](#footer)
         + [Django Admin Panel](#django-admin-panel)
@@ -57,6 +57,7 @@ A full stack Django web application where users can browse recipes and, once log
         + [JavaScript](#javascript)
     * [User Story Testing](#user-story-testing)
     * [Feature Testing](#feature-testing)
+    * [Error Page Testing](#error-page-testing)
     * [Accessibility Testing](#accessibility-testing)
     * [Lighthouse Testing](#lighthouse-testing)
     * [Browser Testing](#browser-testing)
@@ -351,7 +352,7 @@ The home page displays a list of available recipes in a clean, visually appealin
 
 Key features include:
 - List of recipes displayed as cards
-- Cards are resonsive when hovered over on larger screens
+- Cards are responsive when hovered over on larger screens
 - Responsive on different screen sizes
 - 'next' and 'prev' page buttons at the bottom of the page with hover effect in burnt peach
 
@@ -360,7 +361,7 @@ Each recipe card includes:
 - Recipe title
 - Short description
 
-On larger screens, when the user hovers over a recipe, the recipe card moves slighlty to provide a better user experience. Users can click through to individual recipe pages for full details. 
+On larger screens, when the user hovers over a recipe, the recipe card moves slightly to provide a better user experience. Users can click through to individual recipe pages for full details. 
 
 <br>
 
@@ -378,7 +379,7 @@ On larger screens, when the user hovers over a recipe, the recipe card moves sli
 
 ### Registration
 
-New users can register for an account using a secure and intuitive form. There is a link to the log in page incase a user has incorrectly navigated to the registration page. The registration form gives validation feedback to users if they try to submit the form with an empty field that is required and offers password requirements. 
+New users can register for an account using a secure and intuitive form. There is a link to the log in page in case a user has incorrectly navigated to the registration page. The registration form gives validation feedback to users if they try to submit the form with an empty field that is required and offers password requirements. 
 
 Upon successful registration, users receive clear feedback and are logged in immediately to access commenting features.
 
@@ -406,7 +407,7 @@ Key features include:
 
 ### Login and Logout Sections
 
-Registered users can log in securely using their credentials, there's the option to remember log in credentials for quicker access to For Goodness Bakes in the future, providing a better user experience. Incase a new user has incorrectly navigated to the log in page when they do not currently have an account, there is a link to the register page. Clear confirmation messages are displayed on successful login and logout with a prompt before logging out that includes a red hover over effect on the 'Log Out' button, improving user confidence and clarity.
+Registered users can log in securely using their credentials, there's the option to remember log in credentials for quicker access to For Goodness Bakes in the future, providing a better user experience. In case a new user has incorrectly navigated to the log in page when they do not currently have an account, there is a link to the register page. Clear confirmation messages are displayed on successful login and logout with a prompt before logging out that includes a red hover over effect on the 'Log Out' button, improving user confidence and clarity.
 
 Once a user has logged in, the header updates to welcome the user by username and adjusts to the navigation to the relevant options.
 
@@ -451,118 +452,139 @@ Contact us using the form below.'
 
 Key features include:
 - A featured image
-- A description about For Goodness Bakes that can be modified by administrators
-- Time and date stamp of when the description was last updated
+- A description about For Goodness Bakes that can be modified by administrators through Django Administration.
+- Administrators can carry out CRUD functions through Django Administration.
+- Time and date stamp of when the description was last updated.
 - 'Get in touch' contact form
-- Form 'Send' button has ash grey hover effect which is a green tone suggesting success
+- Form 'Send' button has ash grey hover effect which is a green tone suggesting success.
 - Form validation
 - Success message
 
 <br>
 
-![About](docs/about.png "About")
+[About preview for desktop](docs/about-desktop.png "About | Desktop")
 
-![About contact form](docs/about-contact-form.png "About Contact Form")
+[About preview for tablet](docs/about-tablet.png "About | Tablet")
 
-![About contact form validation](docs/about-contact-form-validation.png "About Contact Form Validation")
+[About preview for mobile](docs/about-mobile.png "About | Mobile")
+
+[About contact form](docs/about-contact-form.png "About | Contact Form")
+
+[About contact form button hover effect](docs/about-contact-form-hover.png "About | Contact Form Button Hover Effect")
+
+[About contact form validation](docs/about-contact-form-validation.png "About | Contact Form Validation")
+
+[About - Django administration preview for desktop](docs/about-django-administration-desktop.png "About - Django Administration | Desktop")
 
 <br>
 
 ### Recipe Detail
 
-Each recipe has its own dedicated detail page, providing comprehensive information for users:
+Each recipe has its own dedicated detail page, providing comprehensive information for users whilst maintaining the same relaxed theme the rest of the website carries. 
 
-- **Recipe Information:** Displays the title, featured image, ingredients, and step-by-step method.
-- **Additional Details:** Includes preparation time, cooking time, servings and recipe difficulty.
-- **Comment Integration:** Comments related to the recipe are displayed below the content, allowing users to interact directly.
-- **Responsive Layout:** Content and images adapt seamlessly across mobile, tablet, and desktop devices.
-- **Navigation:** Clear buttons and links allow users to return to the home page, browse other recipes, or perform authenticated actions (commenting, editing).
-- **Accessibility:** Semantic HTML and proper contrast ensure readability for all users.
+Key features include:
+- Recipe Information: displays the title, a brief description, recipe author, date of publish, featured image, ingredients and  step-by-step method with key information such as oven temperature and cooking time in bold to help the user find it.
+- Additional Details: Includes preparation time, cooking time, servings and recipe difficulty.
+- Comment Integration: Comments related to the recipe are displayed below the content with a comment count, allowing users to interact directly.
+- Comment buttons for logged in users are highlighted accordingly, 'Submit' with a success colour, 'Delete' with a danger colour and 'Edit' with the websites standard highlight colour of burnt peach. 
+- A prompt to 'Log in to leave a comment' is visible for guest users who are not logged in.
+- Responsive Layout: Content and images adapt seamlessly across mobile, tablet, and desktop devices.
+- Navigation: Clear buttons and links allow users to return to the home page, about page, register/log in/out page or perform authenticated actions (commenting, editing).
+- Accessibility: Semantic HTML and proper contrast ensure readability for all users.
+- Administrators can carry out CRUD functions through Django Administration.
 
 The recipe detail page combines visual appeal with clear structure to provide a smooth and engaging browsing experience.
 
 <br>
 
-![Recipe detail](docs/recipe-detail.png "Recipe Detail")
+[Recipe detail preview for desktop](docs/recipe-detail-desktop.png "Recipe Detail | Desktop")
+
+[Recipe detail preview for tablet](docs/recipe-detail-tablet.png "Recipe Detail | Tablet")
+
+[Recipe detail preview for mobile](docs/recipe-detail-mobile.png "Recipe Detail | Mobile")
+
+[Recipe detail preview for mobile ](docs/recipe-detail-ingredients-and-method-mobile.png "Recipe Detail | Mobile Continued")
+
+[Recipe detail form validation for desktop](docs/form-validation-desktop.png "Recipe Detail Form Validation | Desktop")
+
+[Recipe detail comments section preview for desktop](docs/recipe-detail-comments-desktop.png "Recipe Detail Comments Section| Desktop")
+
+[Recipe detail comments section preview for tablet](docs/recipe-detail-comments-tablet.png "Recipe Detail Comments Section| Tablet")
+
+[Recipe detail comments section preview for mobile](docs/recipe-detail-comments-mobile.png "Recipe Detail Comments Section| Mobile")
+
+[Recipe detail - Django administration preview for desktop](docs/recipe-django-administration-desktop.png "Recipe Detail - Django Administration | Desktop")
 
 <br>
 
 ### Comment Section
 
-Authenticated users can interact with recipes through a fully featured commenting system. Key functionalities include:
+Authenticated users can interact with recipes through a fully featured commenting system. 
 
-- **Create Comments:** Users can add new comments to any recipe, sharing feedback, baking tips, or personal experiences.
-- **Edit Comments:** Users can edit their own comments to correct errors or provide updates. Edited comments update immediately in the UI.
-- **Delete Comments:** Users can delete their own comments. A confirmation prompt ensures accidental deletions are avoided.
-- **Real-Time Feedback:** Actions such as adding, editing, or deleting comments provide immediate visual confirmation with a success message, improving user experience.
-- **Access Control:** Only authenticated users can create, edit, or delete comments. Users cannot modify comments posted by others.
-- **Moderation:** Admin users have the option to authorise comments and can decline and delete inappropriate or irrelevant comments to maintain a positive community environment.
+Key features include:
+- Create Comments: Users can add new comments to any recipe, sharing feedback, baking tips, or personal experiences.
+- Edit Comments: Users can edit their own comments to correct errors or provide updates. Edited comments update immediately in the UI with an awaiting approval message.
+- Delete Comments: Users can delete their own comments. A confirmation prompt ensures accidental deletions are avoided.
+- Real-Time Feedback: Actions such as adding, editing, or deleting comments provide immediate visual confirmation with a success message, improving user experience.
+- Access Control: Only authenticated users can create, edit, or delete comments. Users cannot modify comments posted by others.
+- Moderation: Admin users have the option to authorise comments and can decline and delete inappropriate or irrelevant comments to maintain a positive community environment.
+- When a user selects a message to edit, the message autofills the comment box to improve UX.
 
-This system encourages UI while maintaining content integrity and community standards.
+This system improves UX while maintaining content integrity and community standards.
 
-<br>
+[Recipe detail comments section submit button hover effect](docs/recipe-detail-comments-submit-hover-desktop.png "Recipe Detail Comments Section Submit Button Hover Effect | Desktop")
 
-![Comment section | logged in](docs/comment-section.png "Comment Section | Logged In")
+[Recipe detail comments section delete button hover effect](docs/recipe-detail-comments-delete-hover-desktop.png "Recipe Detail Comments Section Delete Button Hover Effect | Desktop")
 
-<br>
+[Recipe detail comments section edit autofill](docs/recipe-detail-comments-edit-autofill-desktop.png "Recipe Detail Comments Section Autofill | Desktop")
 
-![Comment section | logged out](docs/comment-section-logged-out.png "Comment Section | Logged Out")
+[Recipe detail comments section edit button hover effect](docs/recipe-detail-comments-edit-hover-desktop.png "Recipe Detail Comments Section Edit Button Hover Effect | Desktop")
 
-<br>
+[Recipe detail comments section logged in](docs/comment-section.png "Comment Section | Logged In")
 
-![Comment awaiting approval](docs/comment-awaiting-approval.png "Comment Awaiting Approval")
+[Recipe detail comments section logged out](docs/comment-section-logged-out.png "Comment Section | Logged Out")
 
-<br>
+[Recipe detail comments section awaiting approval](docs/comment-awaiting-approval.png "Comment Awaiting Approval")
 
-![Update comment success](docs/update-comment-success.png "Update Comment Success")
+[Recipe detail comments section update comment success](docs/update-comment-success.png "Update Comment Success")
 
-<br>
+[Recipe detail comments section delete comment confirmation](docs/delete-comment-confirmation.png "Delete Comment Confirmation")
 
-![Delete comment confirmation](docs/delete-comment-confirmation.png "Delete Comment Confirmation")
-
-<br>
-
-![Delete comment success](docs/delete-comment-success.png "Delete Comment Success")
+[Recipe detail comments section delete comment success](docs/delete-comment-success.png "Delete Comment Success")
 
 <br>
 
-### Success Page
+### Success Messages
 
 Success messages are displayed following key user actions such as registration, login, or comment submission. These provide immediate visual confirmation that actions have been completed successfully.
 
-<br>
+[Login feedback message preview for desktop](docs/login-feedback.png "Login Feedback Message | Desktop")
 
-![Login feedback](docs/login-feedback.png "Login Feedback")
+[Login feedback message preview for tablet](docs/login-feedback-tablet.png "Login Feedback Message | Tablet")
 
-<br>
+[Login feedback message preview for mobile](docs/login-feedback-mobile.png "Login Feedback Message | Mobile")
 
-![Logout feedback](docs/logout-feedback.png "Logout Feedback")
+[Logout feedback message preview](docs/logout-feedback.png "Logout Feedback Message")
 
-<br>
+[Comment success feedback message preview](docs/comment-success.png "Comment Success Message")
 
-![Comment success](docs/comment-success.png "Comment Success")
+[Update comment success feedback message preview](docs/update-comment-success.png "Update comment Success Message")
+
+[Delete comment success feedback message preview](docs/delete-comment-success.png "Delete comment Success Message")
 
 <br>
 
 ### Error Pages
 
-Custom 400, 403, 404 and 500 error pages are included to handle broken or invalid URLs. The error page clearly informs users that the requested content cannot be found and provides a link back to the homepage.
+Custom 400, 403, 404 and 500 error pages are included to handle broken or invalid URLs which improves UX. The error page clearly informs users that the requested content cannot be found and provides a link back to the homepage. These were manually tested during development.
 
-<br>
+[400 error page preview](docs/400.png "400 Error Page")
 
-![400](docs/400.png "400")
+[403 error page preview](docs/403.png "403 Error Page")
 
-<br>
+[404 error page preview](docs/404.png "404 Error Page")
 
-![403](docs/403.png "403")
-
-<br>
-
-![404](docs/404.png "404")
-
-<br>
-
-![500](docs/500.png "500")
+[500 error page preview](docs/500.png "500 Error Page")
 
 <br>
 
@@ -570,14 +592,16 @@ Custom 400, 403, 404 and 500 error pages are included to handle broken or invali
 
 The footer contains:
 - Copyright information
-- Social media links
+- Social media links that open in a new tab
 - Consistent branding
 
-It remains accessible across all pages and screen sizes.
+It offers a clear and simple display making it easy to read without drawing attention away from the main website and remains accessible across all pages and screen sizes.
 
-<br>
+[Footer preview for desktop](docs/footer-desktop.png "Footer | Desktop")
 
-![Footer](docs/footer.png "Footer")
+[Footer preview for tablet](docs/footer-tablet.png "Footer | Tablet")
+
+[Footer preview for mobile](docs/footer-mobile.png "Footer | Mobile")
 
 <br>
 
@@ -585,19 +609,43 @@ It remains accessible across all pages and screen sizes.
 
 Administrators have access to a secure, feature-rich admin panel to manage the website and community content:
 
-- **Recipe Management:** Admins can create, edit, and delete recipes, ensuring content remains accurate and up-to-date.
-- **Summernote Editing:** Summernote is integrated into the admin panel to allow text editing for recipe instructions and descriptions. Admins can:
+- Recipe Management: Admins can create, edit, and delete recipes, ensuring content remains accurate and up-to-date.
+- Summernote Editing: Summernote is integrated into the admin panel to allow rich text editing for recipe instructions and descriptions. Admins can:
   - Format text (bold, italics, headings)
   - Add lists, links, and images
   - Easily structure content for better readability
   This ensures recipes are visually appealing and easy to follow for all users.
-- **Comment Moderation:** Admins can view, edit, and delete user comments, accepting, declining and removing inappropriate or spam content.
-- **User Management:** Admins can manage user accounts, including editing user details and assigning admin privileges.
-- **Secure Access:** Admin access is restricted to superusers with Django’s authentication system, preventing unauthorized access.
-- **UI Feedback:** Admin actions provide immediate confirmation messages to ensure administrators are aware of successful updates or deletions.
-- **Database Control:** All changes made in the admin panel directly update the database while maintaining data integrity and security.
+- Comment Moderation: Admins can view, edit, and delete user comments, accepting, declining and removing inappropriate or spam content.
+- User Management: Admins can manage user accounts, including editing user details and assigning admin privileges.
+- Secure Access: Admin access is restricted to superusers with Django’s authentication system, preventing unauthorized access.
+- UI Feedback: Admin actions provide immediate confirmation messages to ensure administrators are aware of successful updates or deletions.
+- Database Control: All changes made in the admin panel directly update the database while maintaining data integrity and security.
 
 This panel ensures that the platform remains safe, well-maintained, and engaging for all users.
+
+[Django administration login preview](docs/django-administration-login.png "Django Administration | Login")
+
+[Django administration site administration preview](docs/django-administration-site-administration.png "Django Administration | Site Administration")
+
+[Django administration abouts preview](docs/django-administration-abouts.png "Django Administration | Abouts")
+
+[Django administration change abouts preview](docs/django-administration-change-abouts.png "Django Administration | Change Abouts")
+
+[Django administration recipe preview](docs/django-administration-recipe.png "Django Administration | Recipe")
+
+[Django administration change recipe 1/3 preview](docs/django-administration-change-recipe-one.png "Django Administration | Change Recipe 1/3")
+
+[Django administration change recipe 2/3 preview](docs/django-administration-change-recipe-two.png "Django Administration | Change Recipe 2/3")
+
+[Django administration change recipe 3/3 preview](docs/django-administration-change-recipe-three.png "Django Administration | Change Recipe 3/3")
+
+[Django administration users preview](docs/django-administration-users.png "Django Administration | Users")
+
+[Django administration password preview](docs/django-administration-password.png "Django Administration | Passwords")
+
+[Django administration comments preview](docs/django-administration-comments.png "Django Administration | Comments")
+
+[Django administration change comments preview](docs/django-administration-change-comment.png "Django Administration | Change Comments")
 
 <br>
 
@@ -609,6 +657,8 @@ Potential future features include:
 - Ability to save favourite recipes
 - Expanded community interaction features
 - Rating system for recipes
+- Dark mode
+- Character limit for comments
 
 These enhancements would further improve user engagement and scalability.
 
@@ -643,6 +693,7 @@ These enhancements would further improve user engagement and scalability.
 - [Heroku](https://www.heroku.com/ "Heroku")
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode "Prettier - Code Formatter")
 - [VS Code](https://code.visualstudio.com/ "VS Code Homepage")
+- [WAVE](https://wave.webaim.org/report#/https://for-goodness-bakes-app-93b97c50dd02.herokuapp.com/ "WAVE | Homepage")
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation Service Homepage")
 - [W3C HTML Validation Service](https://validator.w3.org/#validate_by_uri "W3C HTML Validation Service Homepage")
 
@@ -736,6 +787,59 @@ Python code was tested through manual testing, Django error reporting and by run
 
 All features were tested to ensure they function correctly for their intended purpose. Authentication, comment CRUD operations, and admin controls were verified.
 
+## Error Page Testing
+
+The error pages can be viewed by:
+- **400**: In recipes.views.py import 'BadRequest' from Django.core.exceptions then define the function for testing 400.
+```
+def test_400(request): 
+    raise BadRequest
+```
+In recipes.urls.py add a new path at the top of urlpatterns to connect to the new view.
+```
+urlpatterns = [
+    path("tests-400/", views.test_400),
+]
+```
+Run the local server and then navigate to the [local deployment](http://127.0.0.1:8000)/test-400/ to view the error page. Once viewing of the error page is complete, remove all code edits to prevent users accessing the 400 error page mistakenly.
+<br>
+- **403**:  In recipes.views.py import 'PermissionsDenied' from Django.core.exceptions then define the function for testing 403.
+```
+def test_403(request):
+    raise PermissionDenied
+```
+In recipes.urls.py add a new path at the top of urlpatterns to connect to the new view.
+```
+urlpatterns = [
+    path("tests-403/", views.test_403),
+  ]
+```
+In settings.py, set
+<br>
+`DEBUG = False`
+<br>
+Run the local server and then navigate to the [local deployment](http://127.0.0.1:8000/)/test-403 to view the error page. Once viewing of the error page is complete, remove all code edits to prevent users accessing the 403 error page mistakenly.
+<br>
+- **404**: - Visit the website at: 
+<br>
+https://for-goodness-bakes-app-93b97c50dd02.herokuapp.com/incorrectlink 
+<br>
+The path does not need to be 'incorreclink', it needs to be something other than a valid path. Once done, the error page should be displayed.
+<br>
+- **500**: - In recipes.index.html, prevent the block content code from running correctly, for example
+<br>
+`{% block content}`
+<br>
+Run the local server and the error page should be displayed.
+
+[400 and 403 error page test code - views.py](docs/recipes-views-code.png "400 and 403 Error Page Test Code | views.py")
+
+[400 and 403 error page test code - urls.py](docs/recipes-urls-code.png "400 and 403 Error Page Test Code | urls.py")
+
+[404 error page - incorrect link](docs/incorrect-link.png "404 Error Page Test Code | Incorrect link")
+
+[500 error page test code - index.html](docs/recipes-index-code.png "500 Error Page Test Code | index.html")
+
 ## Accessibility Testing
 
 Accessibility best practices were followed, including:
@@ -744,6 +848,18 @@ Accessibility best practices were followed, including:
 - Clear navigation structure
 
 Contrast Grid and Lighthouse tools were used to support accessibility testing.
+
+[WAVE](https://wave.webaim.org/report#/https://for-goodness-bakes-app-93b97c50dd02.herokuapp.com/ "WAVE | Homepage") was used to evaluate the accessibility of the website, no errors were found across the site. Some contrast errors were found on the Register and Log In pages due to the links between each other, the standard blue hyperlinks were used to make it clear to users that the link were active. 
+
+[WAVE accessibility evaluation for the home page](docs/wave-home.png "WAVE | Home Page")
+
+[WAVE accessibility evaluation for the recipe detail page](docs/wave-recipe-detail.png "WAVE | Recipe Detail Page")
+
+[WAVE accessibility evaluation for the about page](docs/wave-about.png "WAVE | About Page")
+
+[WAVE accessibility evaluation for the register page](docs/wave-register.png "WAVE | Register Page")
+
+[WAVE accessibility evaluation for the log in page](docs/wave-log-in.png "WAVE | Log In Page")
 
 ## Lighthouse Testing
 
@@ -837,6 +953,8 @@ The project was deployed to Heroku from VS Code early on, this allowed for more 
 #### Learning Resources and Guidance
 
 - [Code Institute](https://codeinstitute.net/ "Code Institute")
+- [Django Projects | Django Exceptions](https://docs.djangoproject.com/en/6.0/ref/exceptions/ "Django Projects | Django Exceptions")
+- [Django Projects | Request and Response Objects](https://docs.djangoproject.com/en/dev/ref/request-response/#django.http.HttpResponseBadRequesthttps://docs.djangoproject.com/en/dev/ref/request-response/#django.http.HttpResponseBadRequest "Django Projects | Request and Response Objects")
 - [MDN](https://developer.mozilla.org/en-US/ "MDN | Homepage")
 - [Slack](https://slack.com/intl/en-gb/ "Slack")
 - [Stack Overflow](https://stackoverflow.com/ "Stack Overflow")
