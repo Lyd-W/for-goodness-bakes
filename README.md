@@ -36,7 +36,7 @@ A full stack Django web application where users can browse recipes and, once log
         + [Recipe Detail Section](#recipe-detail-section)
         + [Comment Section](#comment-section)
         + [Success Messages](#success-messages)
-        + [Error Pages](#error-page)
+        + [Error Pages](#error-pages)
         + [Footer](#footer)
         + [Django Admin Panel](#django-admin-panel)
     * [Future Enhancements](#future-enhancements)
@@ -546,7 +546,7 @@ This system improves UX while maintaining content integrity and community standa
 
 ### Success Messages
 
-Success messages are displayed following key user actions such as registration, login, or comment submission. These provide immediate visual confirmation that actions have been completed successfully.
+Success messages are displayed following key user actions such as registration, login, or comment submission. These provide immediate visual confirmation that actions have been completed successfully. The success messages automatically close themselves after a short time if the user does not close them manually.
 
 [Login feedback message preview for desktop](docs/login-feedback.png "Login Feedback Message | Desktop")
 
@@ -640,6 +640,8 @@ This panel ensures that the platform remains safe, well-maintained, and engaging
 
 [Django administration add user success message preview](docs/django-administration-add-user-success.png "Django Administration | Add User Success Message")
 
+[Django administration delete recipe confirmation message preview](docs/django-administration-delete-recipe-confirmation.png "Django Administration | Delete Recipe Confirmation Message")
+
 <br>
 
 ## Future Enhancements
@@ -683,6 +685,7 @@ These enhancements would further improve user engagement and scalability.
 - [Black](https://pypi.org/project/black/ "Black | Code Formatter")
 - [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FAF7F2%0D%0A%23E8B7C8%0D%0A%23C97A5D%0D%0A%23A8C3B1%0D%0A%232B2B2B&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid")
 - [Coolors](http://https://coolors.co/ "Coolors")
+- [Dev Tools](https://developer.chrome.com/docs/devtools "Chrome | Dev Tools")
 - [Digital Colour Meter](https://support.apple.com/en-gb/guide/digital-color-meter/welcome/mac "Apple | Digital Colour Meter")
 - [Draw.io](https://www.drawio.com/ "Draw.io Homepage")
 - [GitHub](https://github.com "GitHub Homepage")
@@ -803,17 +806,17 @@ Python code was tested through manual testing, Django error reporting and by run
 
 ## User Story Testing
 
-|User Story                               | Result                                      |Pass| Evidence             |
-|-----------------------------------------|---------------------------------------------|----|----------------------|
-| As a public user, I want to browse a list of recipes and view individual recipe details so that I can find recipes to bake without needing to register. | Result | Pass | Evidence |
-| As a new user, I want to create an account and log in securely so that I can participate in commenting on recipes. | Result | Pass | Evidence |
-| As an authenticated user, I want to add comments to recipes so that I can share feedback, baking tips and interact with other users. | Result | Pass | Evidence |
-| As an authenticated user, I want to edit my own comment so that I can correct mistakes or update my advice. | Result | Pass | Evidence |
-| As an authenticated user, I want to delete my own comment so that I can remove content I no longer want displayed. | Result | Pass | Evidence | 
-| As an admin, I want to create new recipes so that fresh content can be added to the site for users to explore. | Result | Pass | Evidence |
-| As an admin, I want to edit existing recipes so that I can correct errors or improve recipe content. | Result | Pass | Evidence |
-| As an admin, I want to delete recipes so that outdated or incorrect content can be removed. | Result | Pass | Evidence |
-| As an admin, I want to manage user comments so that inappropriate or spam content can be removed. | Result | Pass | Evidence |
+|User Story            |     Expected Outcome      | Result                             |Pass| Evidence             |
+|----------------------|---------------------------|------------------------------------|----|----------------------|
+| As a public user, I want to browse a list of recipes and view individual recipe details so that I can find recipes to bake without needing to register. | Public users can view the list of recipes on the home page with images, titles, and descriptions. | Recipes are displayed correctly and are accessible without authentication. | Pass | - [Recipe List with no registration or user logged in](docs/desktop-home-view.png "Recipe List - No Registration or User Logged In") <br> - [Recipe Detail with no registration or user logged in](docs/recipe-detail-logged-out.png "Recipe Detail - No Registration or User Logged In")|
+| As a new user, I want to create an account and log in securely so that I can participate in commenting on recipes. | Users can register using a secure form with validation and receive confirmation feedback. | Registration works as expected with validation and success messages. | Pass | - [Register page with validation](docs/registration-validation.png "Register Page With Validation") <br> - [Register page errors](docs/registration-errors.png "Register Page Errors") <br> - [Register page feedback message](docs/registration-feedback.png "Register Page Feedback Message") |
+| As an authenticated user, I want to add comments to recipes so that I can share feedback, baking tips and interact with other users. | Logged in users can submit comments which appear under the recipe after moderation. | Comment submission works with success feedback and approval state. | Pass | - [Comment section with user logged in](docs/recipe-detail-comments-desktop.png "Comment Section - User Logged In") |
+| As an authenticated user, I want to edit my own comment so that I can correct mistakes or update my advice. | Users can edit their own comments and receive confirmation feedback. | Comments update correctly and display an awaiting approval message. | Pass | - [Comment editing with autofilled message](docs/recipe-detail-comments-edit-autofill-desktop.png "Comment Editing with Autofilled Message") <br> - [Updated comment success message](docs/update-comment-success.png "Updated Comment Success Message") |
+| As an authenticated user, I want to delete my own comment so that I can remove content I no longer want displayed. | Users can delete their own comments after confirmation. | Delete confirmation and success feedback function correctly. | Pass | - [Delete comment preview with danger hover effect](docs/recipe-detail-comments-delete-hover-desktop.png "Delete Comment Preview with danger hover effect") <br> - [Delete comment confirmation message](docs/delete-comment-confirmation.png "Delete Comment Confirmation Message") <br> - [Deleted comment success message](docs/delete-comment-success.png "Deleted Comment Success Message") | 
+| As an admin, I want to create new recipes so that fresh content can be added to the site for users to explore. | Admins can add new recipes via the Django admin panel. | Recipes are created successfully and appear on the site. | Pass | - [Django Administration create new recipe](docs/django-administration-new-recipe.png "Django Administration Create New Recipe") |
+| As an admin, I want to edit existing recipes so that I can correct errors or improve recipe content. | Admins can edit recipe content using the admin panel and Summernote editor. | Recipe edits save correctly and update on the front end. | Pass | - [Django Administration change recipe](docs/django-administration-change-recipe-one.png "Django Administration Change Recipe") |
+| As an admin, I want to delete recipes so that outdated or incorrect content can be removed. | Admins can delete recipes via the admin panel. | Recipes are removed successfully from the database and site. | Pass | - [Django Administration delete recipe](docs/django-administration-change-recipe-three.png "Django Administration Delete Recipe") <br> - [Django Administration delete recipe confirmation](docs/django-administration-delete-recipe-confirmation.png "Django Administration Delete Recipe Confirmation") |
+| As an admin, I want to manage user comments so that inappropriate or spam content can be removed. | Admins can approve, decline, or delete comments through the admin panel. | Comment moderation works as expected and updates user facing content. | Pass | - [Django Administration comment management](docs/django-administration-delete-selected-comments.png "Django Administration Comment Management") <br> - [Django Administration change comment](docs/django-administration-change-comment.png "Django Administration Change Comment") |
 
 [Back to contents](#contents)
 
@@ -949,13 +952,17 @@ No browser-specific issues were identified.
 
 # Deployment
 
+## Local Deployment
+
+## Heroku Deployment
+
 The project was deployed to Heroku from VS Code early on, this allowed for more opportunity to notice errors, as well as to view and test the website at regular intervals. The steps used for deployment were as follows:
 
-## Step One - Create a New Heroku App
+### Step One - Create a New Heroku App
 - Log into Heroku and access your dashboard.
 - Click **"New"** from the top right corner of your dashboard and select **'Create new app'**.
 - Enter a unique name for your app and choose your closest region (EU or USA), click **'Create app'** to create your app.
-## Step Two - Configure Environment Variables
+### Step Two - Configure Environment Variables
 - Go to the **'Settings'** tab of your new app, in the **'Config Vars'** section, click **'Reveal Config Vars'**.
 - Add the following keys and values:
 
@@ -965,12 +972,13 @@ The project was deployed to Heroku from VS Code early on, this allowed for more 
 | DISABLE_COLLECTSTATIC | Set the value to **'1'** temporarily and remove it before the final deployment. |
 | SECRET_KEY | Enter a random secret key, this can be randomly generated using a website such as [Djecrety](https://djecrety.ir/ "Djecrety").
 
-## Step Three - Prepare the Project for Deployment in the IDE
+### Step Three - Prepare the Project for Deployment in the IDE
 - Create a **'requirements.txt'** file to list all of the dependencies required by your project. This can be done by running **'pip3 install -r requirements.txt'** in the terminal, it can then be updated to include any other packages installed by running **'pip3 freeze --local > requirements.txt'** in the terminal.
 - Install **'gunicorn'** using the command **'pip3 install gunicorn~=20.1'** in the terminal and update **'requirements.txt'**.
 - Create a **'Procfile'** in the root directory of the project, add the following line of code to the Procfile **'web: gunicorn project_name.wsgi'**. Ensure project_name matches the project's name.
 - Update the **'ALLOWED_HOSTS'** list in **'settings.py'** to include **'.herokuapp.com',**. 
-## Step Four - Connect Your GitHub Respository to Heroku
+
+### Step Four - Connect Your GitHub Respository to Heroku
 - On the Heroku dashboard, click on the **'Deploy'** tab, in the **'Deployment method'** section, click **'GitHub Connect to GitHub'** where you will be prompted to authenticate with GitHub.
 - Type your project repo name into the search box and click **'Search'**, select the correct repo name.
 - Scroll down to the **'Manual Deploy'** section, ensure the **'Choose a branch to deploy'** is set to **'main'**, then click on the **'Deploy Branch'** button.
