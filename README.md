@@ -55,6 +55,11 @@ A full stack Django web application where users can browse recipes and, once log
         + [HTML](#html)
         + [CSS](#css)
         + [JavaScript](#javascript)
+    * [Automated Testing](#automated-testing)
+        + [Recipes App](#recipes-app)
+        + [About App](#about-app)
+        + [Running the Tests](#running-the-tests)
+        + [Testing Summary](#testing-summary)
     * [User Story Testing](#user-story-testing)
     * [Feature Testing](#feature-testing)
     * [Error Page Testing](#error-page-testing)
@@ -174,7 +179,7 @@ The key website goals are to provide users with a safe community to browse recip
 
 ## Wireframes
 
-Wireframes were created using [Draw.io](https://www.drawio.com/ "Draw.io Homepage"). A mobile first approach was taken throughout, the wireframes provided a visual respresentation of the expected layout and structure of the website. Within the wireframes, key element placement is visible for navigation, content and interactive areas.  
+Wireframes were created using [Draw.io](https://www.drawio.com/ "Draw.io Homepage"). A mobile first approach was taken throughout, the wireframes provided a visual representation of the expected layout and structure of the website. Within the wireframes, key element placement is visible for navigation, content and interactive areas.  
 
 [Mobile Wireframes](docs/mobile-wireframes.png "Mobile Wireframes")
 
@@ -196,7 +201,7 @@ Together, these font groups help to create visual balance, offering warmth and a
 
 ### Colour Scheme
 
-To visualise different colours together [Coolors Scheme](https://coolors.co/2b2b2b-faf7f2-e8b7c8-a8c3b1-c97a5d "Coolors Scheme | For Goodness Bakes") was used to create a fitting combination for the website. Graphite was chosen for the font colour for the feeling of professionalism and ease of legibility whilst being easier on the eyes which was ideal for body text, headings and icons. Parchment was used to create a calmer, welcoming approach. This creates the feeling of reading from paper, suggesting cookbook pages, giving a better UX, therefore this colour was ideal for the website background. Soft Blossom was used to bring in a comforting, feminine touch whilst not being too overpowering, and was used for buttons, links and navigation. To reinforce the calm atmosphere the website aimed for, Ash Grey was selected, this helped to bring a natural, healthier balance to the Soft Blossom because greens are often associated with food and wellness. The final colour used was Burnt Peach, being a similar colour to spices it felt a natural choice for a baking website, bringing a sharp enphasis among the other colours making it ideal for buttons such as submitting,  commenting or hovers and borders.
+To visualise different colours together [Coolors Scheme](https://coolors.co/2b2b2b-faf7f2-e8b7c8-a8c3b1-c97a5d "Coolors Scheme | For Goodness Bakes") was used to create a fitting combination for the website. Graphite was chosen for the font colour for the feeling of professionalism and ease of legibility whilst being easier on the eyes which was ideal for body text, headings and icons. Parchment was used to create a calmer, welcoming approach. This creates the feeling of reading from paper, suggesting cookbook pages, giving a better UX, therefore this colour was ideal for the website background. Soft Blossom was used to bring in a comforting, feminine touch whilst not being too overpowering, and was used for buttons, links and navigation. To reinforce the calm atmosphere the website aimed for, Ash Grey was selected, this helped to bring a natural, healthier balance to the Soft Blossom because greens are often associated with food and wellness. The final colour used was Burnt Peach, being a similar colour to spices it felt a natural choice for a baking website, bringing a sharp emphasis among the other colours making it ideal for buttons such as submitting,  commenting or hovers and borders.
 
 ![Coolors Scheme](docs/coolors.png)
 
@@ -655,6 +660,7 @@ Potential future features include:
 - Dark mode
 - Character limit for comments
 - Update language to ensure consistency 
+- Indicator for when a comment has been edited
 
 These enhancements would further improve user engagement and scalability.
 
@@ -804,6 +810,75 @@ Python code was tested through manual testing, Django error reporting and by run
 
 [CI Python Linter test for about.models.py](docs/python-testing-about-models-py.png "CI Python Linter | about.models.py")
 
+## Automated Testing
+
+Automated testing has been implemented throughout the project to ensure reliability, maintainability, and secure functionality. Django’s built-in TestCase framework was used to test views, forms, models, and user permissions. Tests were written to reflect real user interactions and edge cases, supporting a robust and defensive application.
+
+Automated tests were written for the following areas:
+
+### Recipes App
+**View Tests** ***(recipes/test_views.py)***
+
+- Verifies that recipe detail pages render correctly
+- Confirms recipe data (title, description) is displayed
+- Ensures the comment form is available in context
+- Tests successful comment submission by authenticated users
+- Confirms comments are not created by unauthenticated users
+- Verifies success messages appear after comment submission
+
+These tests ensure correct behaviour for both authenticated and unauthenticated users and validate feedback provided to users.
+ 
+**Form Tests** ***(recipes/test_forms.py)***
+
+- Confirms valid comment data is accepted
+- Ensures empty comment submissions are rejected
+
+This guarantees form validation works as expected and prevents invalid data from being submitted.
+ 
+**Comment Permission Tests** ***(recipes/test_comments.py)***
+
+- Confirms comment authors can edit their own comments
+- Confirms comment authors can delete their own comments
+- Confirms non-authors cannot edit or delete comments
+- Confirms logged-out users cannot edit or delete comments
+
+These tests ensure access control is enforced correctly and protect user-generated content from unauthorised actions.
+ 
+### About App
+**Contact Form Tests** ***(about/test_forms.py)***
+
+- Verifies valid contact form submissions
+- Ensures required fields are enforced
+- Confirms form data is retained after invalid submissions
+- Checks error messages are displayed correctly
+- Confirms success message is shown on valid submission
+
+This ensures a positive user experience while maintaining strong validation and feedback.
+ 
+**View Tests** ***(about/test_views.py)***
+
+- Confirms the About page renders correctly
+- Verifies About content is displayed
+- Ensures the contact form is included in the view context
+ 
+### Running the Tests
+
+All automated tests can be run using the following command:
+```
+python manage.py test
+```
+
+An SQLite database is automatically used during testing to ensure test isolation and prevent interference with production or development data.
+ 
+### Testing Summary
+
+The automated test suite:
+- Validates core functionality
+- Confirms user permissions and security rules
+- Confirms correct user feedback and messaging
+
+[Back to contents](#contents)
+
 ## User Story Testing
 
 |User Story            |     Expected Outcome      | Result                             |Pass| Evidence             |
@@ -861,7 +936,7 @@ Run the local server and then navigate to the [local deployment](http://127.0.0.
 <br>
 https://for-goodness-bakes-app-93b97c50dd02.herokuapp.com/incorrectlink 
 <br>
-The path does not need to be 'incorreclink', it needs to be something other than a valid path. Once done, the error page should be displayed.
+The path does not need to be 'incorrectlink', it needs to be something other than a valid path. Once done, the error page should be displayed.
 <br>
 - **500**: - In recipes.index.html, prevent the block content code from running correctly, for example
 <br>
