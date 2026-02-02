@@ -954,9 +954,53 @@ No browser-specific issues were identified.
 
 ## Local Deployment
 
+To run this project locally on an Apple Mac, start by cloning the repository using the following steps.
+
+1. Navigate to the GitHub repository for this project: [For Goodness Bakes GitHub repository](https://github.com/Lyd-W/for-goodness-bakes. "GitHub | For Goodness Bakes Repository").
+2. Click the **Code** button and copy the HTTPS repository URL.
+3. Open the terminal in your IDE and run the following command:
+```
+git clone https://github.com/Lyd-W/for-goodness-bakes.git
+```
+<br>
+
+Next,
+
+1. Run the following command in the terminal to create a virtual environment:
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+2. Run the following command in the terminal to install the required dependencies for the project:
+```
+pip install -r requirements.txt
+```
+3. Create a directory level file called **env.py**
+4. Add the newly created **env.py** file to **.gitignore**
+5. Inside **env.py**, assign the following variables:
+```
+SECRET_KEY
+DATABASE_URL
+CLOUDINARY_URL
+```
+6. Run database migrations by running the following code in the terminal:
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+7. Run the following command in the terminal to create a new superuser:
+```
+python manage.py createsuperuser
+```
+8. Run the following command in the terminal to run the local development server:
+```
+python manage.py runserver
+```
+9. In your chosen web browser, navigate to: http://127.0.0.1:8000/ to view the project locally.
+
 ## Heroku Deployment
 
-The project was deployed to Heroku from VS Code early on, this allowed for more opportunity to notice errors, as well as to view and test the website at regular intervals. The steps used for deployment were as follows:
+The project was deployed to Heroku from VS Code, using GitHub integration, early on. This allowed for more opportunity to notice errors, as well as to view and test the website at regular intervals. The steps used for deployment were as follows:
 
 ### Step One - Create a New Heroku App
 - Log into Heroku and access your dashboard.
@@ -971,6 +1015,7 @@ The project was deployed to Heroku from VS Code early on, this allowed for more 
 | DATABASE_URL | Insert your own PostgreSQL database URL here. |
 | DISABLE_COLLECTSTATIC | Set the value to **'1'** temporarily and remove it before the final deployment. |
 | SECRET_KEY | Enter a random secret key, this can be randomly generated using a website such as [Djecrety](https://djecrety.ir/ "Djecrety").
+| CLOUDINARY_URL| Insert your own cloudinary URL here. |
 
 ### Step Three - Prepare the Project for Deployment in the IDE
 - Create a **'requirements.txt'** file to list all of the dependencies required by your project. This can be done by running **'pip3 install -r requirements.txt'** in the terminal, it can then be updated to include any other packages installed by running **'pip3 freeze --local > requirements.txt'** in the terminal.
@@ -978,7 +1023,7 @@ The project was deployed to Heroku from VS Code early on, this allowed for more 
 - Create a **'Procfile'** in the root directory of the project, add the following line of code to the Procfile **'web: gunicorn project_name.wsgi'**. Ensure project_name matches the project's name.
 - Update the **'ALLOWED_HOSTS'** list in **'settings.py'** to include **'.herokuapp.com',**. 
 
-### Step Four - Connect Your GitHub Respository to Heroku
+### Step Four - Connect Your GitHub Repository to Heroku
 - On the Heroku dashboard, click on the **'Deploy'** tab, in the **'Deployment method'** section, click **'GitHub Connect to GitHub'** where you will be prompted to authenticate with GitHub.
 - Type your project repo name into the search box and click **'Search'**, select the correct repo name.
 - Scroll down to the **'Manual Deploy'** section, ensure the **'Choose a branch to deploy'** is set to **'main'**, then click on the **'Deploy Branch'** button.
