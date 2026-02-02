@@ -1035,7 +1035,7 @@ The project was deployed to Heroku from VS Code, using GitHub integration, early
 
 #### Feedback, advice and support
 
-- 
+- Richey Malhotra
 
 #### Learning Resources and Guidance
 
